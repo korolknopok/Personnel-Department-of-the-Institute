@@ -35,11 +35,13 @@
             this.information_about_teachersTableAdapter = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSetTableAdapters.Information_about_teachersTableAdapter();
             this.tableAdapterManager = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSetTableAdapters.TableAdapterManager();
             this.information_about_teachersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBoxTeacher = new System.Windows.Forms.ToolStripTextBox();
             this.information_about_teachersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +59,8 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.information_about_teachersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonTeacher = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUnFilter = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.personnel_Department_of_the_InstituteDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.information_about_teachersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.information_about_teachersBindingNavigator)).BeginInit();
@@ -105,7 +109,11 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.information_about_teachersBindingNavigatorSaveItem});
+            this.information_about_teachersBindingNavigatorSaveItem,
+            this.toolStripSeparator1,
+            this.toolStripTextBoxTeacher,
+            this.toolStripButtonTeacher,
+            this.toolStripButtonUnFilter});
             this.information_about_teachersBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.information_about_teachersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.information_about_teachersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -113,9 +121,16 @@
             this.information_about_teachersBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.information_about_teachersBindingNavigator.Name = "information_about_teachersBindingNavigator";
             this.information_about_teachersBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.information_about_teachersBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.information_about_teachersBindingNavigator.Size = new System.Drawing.Size(942, 25);
             this.information_about_teachersBindingNavigator.TabIndex = 0;
             this.information_about_teachersBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
             // 
             // bindingNavigatorSeparator
             // 
@@ -132,22 +147,26 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripTextBoxTeacher
+            // 
+            this.toolStripTextBoxTeacher.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBoxTeacher.Name = "toolStripTextBoxTeacher";
+            this.toolStripTextBoxTeacher.Size = new System.Drawing.Size(100, 25);
             // 
             // information_about_teachersDataGridView
             // 
@@ -167,7 +186,7 @@
             this.information_about_teachersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.information_about_teachersDataGridView.Location = new System.Drawing.Point(0, 25);
             this.information_about_teachersDataGridView.Name = "information_about_teachersDataGridView";
-            this.information_about_teachersDataGridView.Size = new System.Drawing.Size(800, 425);
+            this.information_about_teachersDataGridView.Size = new System.Drawing.Size(942, 425);
             this.information_about_teachersDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -288,11 +307,31 @@
             this.information_about_teachersBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.information_about_teachersBindingNavigatorSaveItem.Click += new System.EventHandler(this.information_about_teachersBindingNavigatorSaveItem_Click);
             // 
+            // toolStripButtonTeacher
+            // 
+            this.toolStripButtonTeacher.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonTeacher.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.filter;
+            this.toolStripButtonTeacher.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonTeacher.Name = "toolStripButtonTeacher";
+            this.toolStripButtonTeacher.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonTeacher.Text = "toolStripButton1";
+            this.toolStripButtonTeacher.Click += new System.EventHandler(this.toolStripButtonTeacher_Click);
+            // 
+            // toolStripButtonUnFilter
+            // 
+            this.toolStripButtonUnFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUnFilter.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.filter__1_;
+            this.toolStripButtonUnFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUnFilter.Name = "toolStripButtonUnFilter";
+            this.toolStripButtonUnFilter.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUnFilter.Text = "toolStripButton1";
+            this.toolStripButtonUnFilter.Click += new System.EventHandler(this.toolStripButtonUnFilter_Click);
+            // 
             // FormInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(942, 450);
             this.Controls.Add(this.information_about_teachersDataGridView);
             this.Controls.Add(this.information_about_teachersBindingNavigator);
             this.Name = "FormInformation";
@@ -338,5 +377,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonTeacher;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxTeacher;
+        private System.Windows.Forms.ToolStripButton toolStripButtonUnFilter;
     }
 }

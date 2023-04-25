@@ -150,5 +150,11 @@
   <ItemGroup>
     <None Include="Resources\free-icon-book-4347419.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter %281%29.png" />
+    <None Include="Resources\filter.png" />
+    <Content Include="Resources\research.png" />
+    <None Include="Resources\research1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -136,7 +136,7 @@
             this.LabourBookButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.LabourBookButton.Name = "LabourBookButton";
             this.LabourBookButton.Size = new System.Drawing.Size(23, 22);
-            this.LabourBookButton.Text = "toolStripButton1";
+            this.LabourBookButton.Text = "LabourBookButton";
             this.LabourBookButton.Click += new System.EventHandler(this.LabourBookButton_Click);
             // 
             // ExitToolStripMenuItem
