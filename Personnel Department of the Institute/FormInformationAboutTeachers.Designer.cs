@@ -35,13 +35,22 @@
             this.information_about_teachersTableAdapter = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSetTableAdapters.Information_about_teachersTableAdapter();
             this.tableAdapterManager = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSetTableAdapters.TableAdapterManager();
             this.information_about_teachersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.information_about_teachersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBoxTeacher = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButtonTeacher = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonUnFilter = new System.Windows.Forms.ToolStripButton();
             this.information_about_teachersDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,15 +61,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.information_about_teachersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonTeacher = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonUnFilter = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.personnel_Department_of_the_InstituteDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.information_about_teachersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.information_about_teachersBindingNavigator)).BeginInit();
@@ -125,12 +125,48 @@
             this.information_about_teachersBindingNavigator.TabIndex = 0;
             this.information_about_teachersBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
@@ -152,10 +188,37 @@
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
+            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // information_about_teachersBindingNavigatorSaveItem
+            // 
+            this.information_about_teachersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.information_about_teachersBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("information_about_teachersBindingNavigatorSaveItem.Image")));
+            this.information_about_teachersBindingNavigatorSaveItem.Name = "information_about_teachersBindingNavigatorSaveItem";
+            this.information_about_teachersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.information_about_teachersBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.information_about_teachersBindingNavigatorSaveItem.Click += new System.EventHandler(this.information_about_teachersBindingNavigatorSaveItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -167,6 +230,26 @@
             this.toolStripTextBoxTeacher.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBoxTeacher.Name = "toolStripTextBoxTeacher";
             this.toolStripTextBoxTeacher.Size = new System.Drawing.Size(100, 25);
+            // 
+            // toolStripButtonTeacher
+            // 
+            this.toolStripButtonTeacher.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonTeacher.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.filter;
+            this.toolStripButtonTeacher.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonTeacher.Name = "toolStripButtonTeacher";
+            this.toolStripButtonTeacher.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonTeacher.Text = "toolStripButton1";
+            this.toolStripButtonTeacher.Click += new System.EventHandler(this.toolStripButtonTeacher_Click);
+            // 
+            // toolStripButtonUnFilter
+            // 
+            this.toolStripButtonUnFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonUnFilter.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.filter__1_;
+            this.toolStripButtonUnFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonUnFilter.Name = "toolStripButtonUnFilter";
+            this.toolStripButtonUnFilter.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonUnFilter.Text = "toolStripButton1";
+            this.toolStripButtonUnFilter.Click += new System.EventHandler(this.toolStripButtonUnFilter_Click);
             // 
             // information_about_teachersDataGridView
             // 
@@ -188,6 +271,7 @@
             this.information_about_teachersDataGridView.Name = "information_about_teachersDataGridView";
             this.information_about_teachersDataGridView.Size = new System.Drawing.Size(942, 425);
             this.information_about_teachersDataGridView.TabIndex = 1;
+            
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -243,89 +327,6 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "Id_Contract";
             this.dataGridViewTextBoxColumn9.HeaderText = "Id_Contract";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
-            // 
-            // information_about_teachersBindingNavigatorSaveItem
-            // 
-            this.information_about_teachersBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.information_about_teachersBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("information_about_teachersBindingNavigatorSaveItem.Image")));
-            this.information_about_teachersBindingNavigatorSaveItem.Name = "information_about_teachersBindingNavigatorSaveItem";
-            this.information_about_teachersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.information_about_teachersBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.information_about_teachersBindingNavigatorSaveItem.Click += new System.EventHandler(this.information_about_teachersBindingNavigatorSaveItem_Click);
-            // 
-            // toolStripButtonTeacher
-            // 
-            this.toolStripButtonTeacher.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonTeacher.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.filter;
-            this.toolStripButtonTeacher.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonTeacher.Name = "toolStripButtonTeacher";
-            this.toolStripButtonTeacher.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonTeacher.Text = "toolStripButton1";
-            this.toolStripButtonTeacher.Click += new System.EventHandler(this.toolStripButtonTeacher_Click);
-            // 
-            // toolStripButtonUnFilter
-            // 
-            this.toolStripButtonUnFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUnFilter.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.filter__1_;
-            this.toolStripButtonUnFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUnFilter.Name = "toolStripButtonUnFilter";
-            this.toolStripButtonUnFilter.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUnFilter.Text = "toolStripButton1";
-            this.toolStripButtonUnFilter.Click += new System.EventHandler(this.toolStripButtonUnFilter_Click);
             // 
             // FormInformation
             // 

@@ -19,9 +19,19 @@ namespace Personnel_Department_of_the_Institute
 
         private void anketaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.anketaBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.personnel_Department_of_the_InstituteDataSet);
+            int indexPosition;
+            try
+            {
+                this.Validate();
+                this.anketaBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.personnel_Department_of_the_InstituteDataSet);
+            }
+
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
@@ -70,6 +80,8 @@ namespace Personnel_Department_of_the_Institute
                     MessageBox.Show("Ошибка поиска \n" + err.Message);
                     return;
                 }
+
+
 
                 if (indexPos > -1)
                     anketaBindingSource.Position = indexPos;
