@@ -73,5 +73,10 @@ namespace Personnel_Department_of_the_Institute
         {
             FormLabourBookData.fw.ShowForm();
         }
+
+        private void toolStripButtonSQL_Click(object sender, EventArgs e)
+        {
+            FormSQL.fw.Show();
+        }
     }
 }

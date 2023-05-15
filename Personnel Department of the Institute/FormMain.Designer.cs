@@ -37,6 +37,7 @@
             this.Contract = new System.Windows.Forms.ToolStripButton();
             this.InformationButton = new System.Windows.Forms.ToolStripButton();
             this.LabourBookButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonSQL = new System.Windows.Forms.ToolStripButton();
             this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutTheProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -70,7 +71,8 @@
             this.Anketa,
             this.Contract,
             this.InformationButton,
-            this.LabourBookButton});
+            this.LabourBookButton,
+            this.toolStripButtonSQL});
             this.ToolStripMain.Location = new System.Drawing.Point(0, 24);
             this.ToolStripMain.Name = "ToolStripMain";
             this.ToolStripMain.Size = new System.Drawing.Size(800, 25);
@@ -139,6 +141,16 @@
             this.LabourBookButton.Text = "LabourBookButton";
             this.LabourBookButton.Click += new System.EventHandler(this.LabourBookButton_Click);
             // 
+            // toolStripButtonSQL
+            // 
+            this.toolStripButtonSQL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButtonSQL.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.choice;
+            this.toolStripButtonSQL.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonSQL.Name = "toolStripButtonSQL";
+            this.toolStripButtonSQL.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButtonSQL.Text = "toolStripButtonSQL";
+            this.toolStripButtonSQL.Click += new System.EventHandler(this.toolStripButtonSQL_Click);
+            // 
             // ExitToolStripMenuItem
             // 
             this.ExitToolStripMenuItem.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.logout__1_;
@@ -191,6 +203,7 @@
         private System.Windows.Forms.ToolStripButton Contract;
         private System.Windows.Forms.ToolStripButton InformationButton;
         private System.Windows.Forms.ToolStripButton LabourBookButton;
+        private System.Windows.Forms.ToolStripButton toolStripButtonSQL;
     }
 }
 

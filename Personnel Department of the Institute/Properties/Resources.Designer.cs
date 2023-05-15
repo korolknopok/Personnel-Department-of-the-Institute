@@ -63,6 +63,16 @@ namespace Personnel_Department_of_the_Institute.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap choice {
+            get {
+                object obj = ResourceManager.GetObject("choice", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap filter {
             get {
                 object obj = ResourceManager.GetObject("filter", resourceCulture);
@@ -136,6 +146,16 @@ namespace Personnel_Department_of_the_Institute.Properties {
         internal static System.Drawing.Bitmap logout__1_ {
             get {
                 object obj = ResourceManager.GetObject("logout__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loop_arrow {
+            get {
+                object obj = ResourceManager.GetObject("loop-arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

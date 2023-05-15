@@ -76,6 +76,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSQL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSQL.Designer.cs">
+      <DependentUpon>FormSQL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personnel_Department_of_the_InstituteDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -97,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSQL.resx">
+      <DependentUpon>FormSQL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,6 +162,10 @@
   <ItemGroup>
     <None Include="Resources\filter %281%29.png" />
     <None Include="Resources\filter.png" />
+    <Content Include="Resources\choice.png" />
+    <None Include="Resources\choice1.png" />
+    <Content Include="Resources\loop-arrow.png" />
+    <None Include="Resources\loop-arrow1.png" />
     <Content Include="Resources\research.png" />
     <None Include="Resources\research1.png" />
   </ItemGroup>
