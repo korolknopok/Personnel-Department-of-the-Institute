@@ -17,6 +17,7 @@ namespace Personnel_Department_of_the_Institute
             InitializeComponent();
         }
 
+
         private void labour_book_dataBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
