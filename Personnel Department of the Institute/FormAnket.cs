@@ -41,6 +41,10 @@ namespace Personnel_Department_of_the_Institute
             this.contractTableAdapter.Fill(this.personnel_Department_of_the_InstituteDataSet.Contract);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet.Anketa". При необходимости она может быть перемещена или удалена.
             this.anketaTableAdapter.Fill(this.personnel_Department_of_the_InstituteDataSet.Anketa);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet.Contract". При необходимости она может быть перемещена или удалена.
+            this.contractTableAdapter.Fill(this.personnel_Department_of_the_InstituteDataSet.Contract);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet.Anketa". При необходимости она может быть перемещена или удалена.
+            this.anketaTableAdapter.Fill(this.personnel_Department_of_the_InstituteDataSet.Anketa);
 
         }
         private static FormAnket f;
@@ -94,5 +98,12 @@ namespace Personnel_Department_of_the_Institute
             }
         }
 
+        private void anketaBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.anketaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.personnel_Department_of_the_InstituteDataSet);
+
+        }
     }
 }

@@ -72,8 +72,8 @@ namespace Personnel_Department_of_the_Institute {
                 if ((ds.Tables["Contract"] != null)) {
                     base.Tables.Add(new ContractDataTable(ds.Tables["Contract"]));
                 }
-                if ((ds.Tables["Information about teachers"] != null)) {
-                    base.Tables.Add(new Information_about_teachersDataTable(ds.Tables["Information about teachers"]));
+                if ((ds.Tables["Information_about_teachers"] != null)) {
+                    base.Tables.Add(new Information_about_teachersDataTable(ds.Tables["Information_about_teachers"]));
                 }
                 if ((ds.Tables["Labour_book_data"] != null)) {
                     base.Tables.Add(new Labour_book_dataDataTable(ds.Tables["Labour_book_data"]));
@@ -209,8 +209,8 @@ namespace Personnel_Department_of_the_Institute {
                 if ((ds.Tables["Contract"] != null)) {
                     base.Tables.Add(new ContractDataTable(ds.Tables["Contract"]));
                 }
-                if ((ds.Tables["Information about teachers"] != null)) {
-                    base.Tables.Add(new Information_about_teachersDataTable(ds.Tables["Information about teachers"]));
+                if ((ds.Tables["Information_about_teachers"] != null)) {
+                    base.Tables.Add(new Information_about_teachersDataTable(ds.Tables["Information_about_teachers"]));
                 }
                 if ((ds.Tables["Labour_book_data"] != null)) {
                     base.Tables.Add(new Labour_book_dataDataTable(ds.Tables["Labour_book_data"]));
@@ -260,7 +260,7 @@ namespace Personnel_Department_of_the_Institute {
                     this.tableContract.InitVars();
                 }
             }
-            this.tableInformation_about_teachers = ((Information_about_teachersDataTable)(base.Tables["Information about teachers"]));
+            this.tableInformation_about_teachers = ((Information_about_teachersDataTable)(base.Tables["Information_about_teachers"]));
             if ((initTable == true)) {
                 if ((this.tableInformation_about_teachers != null)) {
                     this.tableInformation_about_teachers.InitVars();
@@ -273,7 +273,7 @@ namespace Personnel_Department_of_the_Institute {
                 }
             }
             this.relationFK_Contract_Anketa = this.Relations["FK_Contract_Anketa"];
-            this.relationFK_Information_about_teachers_Contract = this.Relations["FK_Information about teachers_Contract"];
+            this.relationFK_Information_about_teachers_Contract = this.Relations["FK_Information_about_teachers_Contract"];
             this.relationFK_Labour_book_data_Anketa = this.Relations["FK_Labour_book_data_Anketa"];
         }
         
@@ -294,15 +294,15 @@ namespace Personnel_Department_of_the_Institute {
             this.tableLabour_book_data = new Labour_book_dataDataTable();
             base.Tables.Add(this.tableLabour_book_data);
             this.relationFK_Contract_Anketa = new global::System.Data.DataRelation("FK_Contract_Anketa", new global::System.Data.DataColumn[] {
-                        this.tableAnketa.Id_AnketColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnketa.Id_AnketaColumn}, new global::System.Data.DataColumn[] {
                         this.tableContract.Id_AnketaColumn}, false);
             this.Relations.Add(this.relationFK_Contract_Anketa);
-            this.relationFK_Information_about_teachers_Contract = new global::System.Data.DataRelation("FK_Information about teachers_Contract", new global::System.Data.DataColumn[] {
+            this.relationFK_Information_about_teachers_Contract = new global::System.Data.DataRelation("FK_Information_about_teachers_Contract", new global::System.Data.DataColumn[] {
                         this.tableContract.Id_ContractColumn}, new global::System.Data.DataColumn[] {
                         this.tableInformation_about_teachers.Id_ContractColumn}, false);
             this.Relations.Add(this.relationFK_Information_about_teachers_Contract);
             this.relationFK_Labour_book_data_Anketa = new global::System.Data.DataRelation("FK_Labour_book_data_Anketa", new global::System.Data.DataColumn[] {
-                        this.tableAnketa.Id_AnketColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAnketa.Id_AnketaColumn}, new global::System.Data.DataColumn[] {
                         this.tableLabour_book_data.Id_AnketColumn}, false);
             this.Relations.Add(this.relationFK_Labour_book_data_Anketa);
         }
@@ -405,7 +405,7 @@ namespace Personnel_Department_of_the_Institute {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class AnketaDataTable : global::System.Data.TypedTableBase<AnketaRow> {
             
-            private global::System.Data.DataColumn columnId_Anket;
+            private global::System.Data.DataColumn columnId_Anketa;
             
             private global::System.Data.DataColumn columnSpeciality;
             
@@ -462,9 +462,9 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Id_AnketColumn {
+            public global::System.Data.DataColumn Id_AnketaColumn {
                 get {
-                    return this.columnId_Anket;
+                    return this.columnId_Anketa;
                 }
             }
             
@@ -585,10 +585,10 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AnketaRow AddAnketaRow(string Speciality, string MiddleName, string SurName, string FirstName, int INN, string Past_place_of_work, string Education, string Burn_place, int Age, string Contact_phone_number) {
+            public AnketaRow AddAnketaRow(int Id_Anketa, string Speciality, string MiddleName, string SurName, string FirstName, int INN, string Past_place_of_work, string Education, string Burn_place, int Age, string Contact_phone_number) {
                 AnketaRow rowAnketaRow = ((AnketaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id_Anketa,
                         Speciality,
                         MiddleName,
                         SurName,
@@ -606,9 +606,9 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AnketaRow FindById_Anket(int Id_Anket) {
+            public AnketaRow FindById_Anketa(int Id_Anketa) {
                 return ((AnketaRow)(this.Rows.Find(new object[] {
-                            Id_Anket})));
+                            Id_Anketa})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -628,7 +628,7 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnId_Anket = base.Columns["Id_Anket"];
+                this.columnId_Anketa = base.Columns["Id_Anketa"];
                 this.columnSpeciality = base.Columns["Speciality"];
                 this.columnMiddleName = base.Columns["MiddleName"];
                 this.columnSurName = base.Columns["SurName"];
@@ -644,8 +644,8 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnId_Anket = new global::System.Data.DataColumn("Id_Anket", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnId_Anket);
+                this.columnId_Anketa = new global::System.Data.DataColumn("Id_Anketa", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnId_Anketa);
                 this.columnSpeciality = new global::System.Data.DataColumn("Speciality", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSpeciality);
                 this.columnMiddleName = new global::System.Data.DataColumn("MiddleName", typeof(string), null, global::System.Data.MappingType.Element);
@@ -667,13 +667,9 @@ namespace Personnel_Department_of_the_Institute {
                 this.columnContact_phone_number = new global::System.Data.DataColumn("Contact_phone_number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnContact_phone_number);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnId_Anket}, true));
-                this.columnId_Anket.AutoIncrement = true;
-                this.columnId_Anket.AutoIncrementSeed = -1;
-                this.columnId_Anket.AutoIncrementStep = -1;
-                this.columnId_Anket.AllowDBNull = false;
-                this.columnId_Anket.ReadOnly = true;
-                this.columnId_Anket.Unique = true;
+                                this.columnId_Anketa}, true));
+                this.columnId_Anketa.AllowDBNull = false;
+                this.columnId_Anketa.Unique = true;
                 this.columnSpeciality.AllowDBNull = false;
                 this.columnSpeciality.MaxLength = 50;
                 this.columnMiddleName.MaxLength = 50;
@@ -963,10 +959,10 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ContractRow AddContractRow(int Pedagogic_stage, string List_of_disciplines, int Load_in_the_current_year_number_of_hours, string Date_of_conclusion_of_the_contract, string Contract_end_date, AnketaRow parentAnketaRowByFK_Contract_Anketa) {
+            public ContractRow AddContractRow(int Id_Contract, int Pedagogic_stage, string List_of_disciplines, int Load_in_the_current_year_number_of_hours, string Date_of_conclusion_of_the_contract, string Contract_end_date, AnketaRow parentAnketaRowByFK_Contract_Anketa) {
                 ContractRow rowContractRow = ((ContractRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id_Contract,
                         Pedagogic_stage,
                         List_of_disciplines,
                         Load_in_the_current_year_number_of_hours,
@@ -1033,21 +1029,11 @@ namespace Personnel_Department_of_the_Institute {
                 base.Columns.Add(this.columnId_Anketa);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_Contract}, true));
-                this.columnId_Contract.AutoIncrement = true;
-                this.columnId_Contract.AutoIncrementSeed = -1;
-                this.columnId_Contract.AutoIncrementStep = -1;
                 this.columnId_Contract.AllowDBNull = false;
-                this.columnId_Contract.ReadOnly = true;
                 this.columnId_Contract.Unique = true;
-                this.columnPedagogic_stage.AllowDBNull = false;
-                this.columnList_of_disciplines.AllowDBNull = false;
                 this.columnList_of_disciplines.MaxLength = 50;
-                this.columnLoad_in_the_current_year_number_of_hours.AllowDBNull = false;
-                this.columnDate_of_conclusion_of_the_contract.AllowDBNull = false;
                 this.columnDate_of_conclusion_of_the_contract.MaxLength = 50;
-                this.columnContract_end_date.AllowDBNull = false;
                 this.columnContract_end_date.MaxLength = 50;
-                this.columnId_Anketa.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1202,7 +1188,7 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Information_about_teachersDataTable() {
-                this.TableName = "Information about teachers";
+                this.TableName = "Information_about_teachers";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1341,10 +1327,10 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Information_about_teachersRow AddInformation_about_teachersRow(string Position_Degree_title, string Date_start_end_of_the_vacation, string Date_of_admission_to_work, string Passport_data, string Name_of_the_department_or_department, string Pension_certificate_number, string Government_awards, ContractRow parentContractRowByFK_Information_about_teachers_Contract) {
+            public Information_about_teachersRow AddInformation_about_teachersRow(int Id_Teach, string Position_Degree_title, string Date_start_end_of_the_vacation, string Date_of_admission_to_work, string Passport_data, string Name_of_the_department_or_department, string Pension_certificate_number, string Government_awards, ContractRow parentContractRowByFK_Information_about_teachers_Contract) {
                 Information_about_teachersRow rowInformation_about_teachersRow = ((Information_about_teachersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id_Teach,
                         Position_Degree_title,
                         Date_start_end_of_the_vacation,
                         Date_of_admission_to_work,
@@ -1419,11 +1405,7 @@ namespace Personnel_Department_of_the_Institute {
                 base.Columns.Add(this.columnId_Contract);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_Teach}, true));
-                this.columnId_Teach.AutoIncrement = true;
-                this.columnId_Teach.AutoIncrementSeed = -1;
-                this.columnId_Teach.AutoIncrementStep = -1;
                 this.columnId_Teach.AllowDBNull = false;
-                this.columnId_Teach.ReadOnly = true;
                 this.columnId_Teach.Unique = true;
                 this.columnPosition_Degree_title.MaxLength = 50;
                 this.columnDate_start_end_of_the_vacation.AllowDBNull = false;
@@ -1691,10 +1673,10 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Labour_book_dataRow AddLabour_book_dataRow(string Number_and_date_of_issue, string Date_and_number_of_the_enrolment_order, string Moving_to_another_unit, AnketaRow parentAnketaRowByFK_Labour_book_data_Anketa) {
+            public Labour_book_dataRow AddLabour_book_dataRow(int Id_Labour_book, string Number_and_date_of_issue, string Date_and_number_of_the_enrolment_order, string Moving_to_another_unit, AnketaRow parentAnketaRowByFK_Labour_book_data_Anketa) {
                 Labour_book_dataRow rowLabour_book_dataRow = ((Labour_book_dataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        Id_Labour_book,
                         Number_and_date_of_issue,
                         Date_and_number_of_the_enrolment_order,
                         Moving_to_another_unit,
@@ -1753,11 +1735,7 @@ namespace Personnel_Department_of_the_Institute {
                 base.Columns.Add(this.columnId_Anket);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_Labour_book}, true));
-                this.columnId_Labour_book.AutoIncrement = true;
-                this.columnId_Labour_book.AutoIncrementSeed = -1;
-                this.columnId_Labour_book.AutoIncrementStep = -1;
                 this.columnId_Labour_book.AllowDBNull = false;
-                this.columnId_Labour_book.ReadOnly = true;
                 this.columnId_Labour_book.Unique = true;
                 this.columnNumber_and_date_of_issue.AllowDBNull = false;
                 this.columnNumber_and_date_of_issue.MaxLength = 50;
@@ -1906,12 +1884,12 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Id_Anket {
+            public int Id_Anketa {
                 get {
-                    return ((int)(this[this.tableAnketa.Id_AnketColumn]));
+                    return ((int)(this[this.tableAnketa.Id_AnketaColumn]));
                 }
                 set {
-                    this[this.tableAnketa.Id_AnketColumn] = value;
+                    this[this.tableAnketa.Id_AnketaColumn] = value;
                 }
             }
             
@@ -2111,7 +2089,12 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Pedagogic_stage {
                 get {
-                    return ((int)(this[this.tableContract.Pedagogic_stageColumn]));
+                    try {
+                        return ((int)(this[this.tableContract.Pedagogic_stageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Pedagogic_stage\' в таблице \'Contract\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableContract.Pedagogic_stageColumn] = value;
@@ -2122,7 +2105,12 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string List_of_disciplines {
                 get {
-                    return ((string)(this[this.tableContract.List_of_disciplinesColumn]));
+                    try {
+                        return ((string)(this[this.tableContract.List_of_disciplinesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'List_of_disciplines\' в таблице \'Contract\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableContract.List_of_disciplinesColumn] = value;
@@ -2133,7 +2121,13 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Load_in_the_current_year_number_of_hours {
                 get {
-                    return ((int)(this[this.tableContract.Load_in_the_current_year_number_of_hoursColumn]));
+                    try {
+                        return ((int)(this[this.tableContract.Load_in_the_current_year_number_of_hoursColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Load_in_the_current_year_number_of_hours\' в таблице \'Contra" +
+                                "ct\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableContract.Load_in_the_current_year_number_of_hoursColumn] = value;
@@ -2144,7 +2138,13 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Date_of_conclusion_of_the_contract {
                 get {
-                    return ((string)(this[this.tableContract.Date_of_conclusion_of_the_contractColumn]));
+                    try {
+                        return ((string)(this[this.tableContract.Date_of_conclusion_of_the_contractColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Date_of_conclusion_of_the_contract\' в таблице \'Contract\' ра" +
+                                "вно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableContract.Date_of_conclusion_of_the_contractColumn] = value;
@@ -2155,7 +2155,12 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Contract_end_date {
                 get {
-                    return ((string)(this[this.tableContract.Contract_end_dateColumn]));
+                    try {
+                        return ((string)(this[this.tableContract.Contract_end_dateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Contract_end_date\' в таблице \'Contract\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableContract.Contract_end_dateColumn] = value;
@@ -2166,7 +2171,12 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Id_Anketa {
                 get {
-                    return ((int)(this[this.tableContract.Id_AnketaColumn]));
+                    try {
+                        return ((int)(this[this.tableContract.Id_AnketaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Id_Anketa\' в таблице \'Contract\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableContract.Id_AnketaColumn] = value;
@@ -2186,12 +2196,84 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPedagogic_stageNull() {
+                return this.IsNull(this.tableContract.Pedagogic_stageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPedagogic_stageNull() {
+                this[this.tableContract.Pedagogic_stageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsList_of_disciplinesNull() {
+                return this.IsNull(this.tableContract.List_of_disciplinesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetList_of_disciplinesNull() {
+                this[this.tableContract.List_of_disciplinesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsLoad_in_the_current_year_number_of_hoursNull() {
+                return this.IsNull(this.tableContract.Load_in_the_current_year_number_of_hoursColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetLoad_in_the_current_year_number_of_hoursNull() {
+                this[this.tableContract.Load_in_the_current_year_number_of_hoursColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDate_of_conclusion_of_the_contractNull() {
+                return this.IsNull(this.tableContract.Date_of_conclusion_of_the_contractColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDate_of_conclusion_of_the_contractNull() {
+                this[this.tableContract.Date_of_conclusion_of_the_contractColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsContract_end_dateNull() {
+                return this.IsNull(this.tableContract.Contract_end_dateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetContract_end_dateNull() {
+                this[this.tableContract.Contract_end_dateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsId_AnketaNull() {
+                return this.IsNull(this.tableContract.Id_AnketaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetId_AnketaNull() {
+                this[this.tableContract.Id_AnketaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Information_about_teachersRow[] GetInformation_about_teachersRows() {
-                if ((this.Table.ChildRelations["FK_Information about teachers_Contract"] == null)) {
+                if ((this.Table.ChildRelations["FK_Information_about_teachers_Contract"] == null)) {
                     return new Information_about_teachersRow[0];
                 }
                 else {
-                    return ((Information_about_teachersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Information about teachers_Contract"])));
+                    return ((Information_about_teachersRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Information_about_teachers_Contract"])));
                 }
             }
         }
@@ -2229,7 +2311,7 @@ namespace Personnel_Department_of_the_Institute {
                         return ((string)(this[this.tableInformation_about_teachers.Position_Degree_titleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Position_Degree_title\' в таблице \'Information about teacher" +
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Position_Degree_title\' в таблице \'Information_about_teacher" +
                                 "s\' равно DBNull.", e);
                     }
                 }
@@ -2301,7 +2383,7 @@ namespace Personnel_Department_of_the_Institute {
                         return ((string)(this[this.tableInformation_about_teachers.Government_awardsColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Government_awards\' в таблице \'Information about teachers\' р" +
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Government_awards\' в таблице \'Information_about_teachers\' р" +
                                 "авно DBNull.", e);
                     }
                 }
@@ -2325,10 +2407,10 @@ namespace Personnel_Department_of_the_Institute {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ContractRow ContractRow {
                 get {
-                    return ((ContractRow)(this.GetParentRow(this.Table.ParentRelations["FK_Information about teachers_Contract"])));
+                    return ((ContractRow)(this.GetParentRow(this.Table.ParentRelations["FK_Information_about_teachers_Contract"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Information about teachers_Contract"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Information_about_teachers_Contract"]);
                 }
             }
             
@@ -2735,7 +2817,7 @@ namespace Personnel_Department_of_the_Institute.Personnel_Department_of_the_Inst
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Anketa";
-            tableMapping.ColumnMappings.Add("Id_Anket", "Id_Anket");
+            tableMapping.ColumnMappings.Add("Id_Anketa", "Id_Anketa");
             tableMapping.ColumnMappings.Add("Speciality", "Speciality");
             tableMapping.ColumnMappings.Add("MiddleName", "MiddleName");
             tableMapping.ColumnMappings.Add("SurName", "SurName");
@@ -2749,9 +2831,9 @@ namespace Personnel_Department_of_the_Institute.Personnel_Department_of_the_Inst
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Anketa] WHERE (([Id_Anket] = @Original_Id_Anket) AND ([Speciality] = @Original_Speciality) AND ((@IsNull_MiddleName = 1 AND [MiddleName] IS NULL) OR ([MiddleName] = @Original_MiddleName)) AND ([SurName] = @Original_SurName) AND ([FirstName] = @Original_FirstName) AND ([INN] = @Original_INN) AND ((@IsNull_Past_place_of_work = 1 AND [Past_place_of_work] IS NULL) OR ([Past_place_of_work] = @Original_Past_place_of_work)) AND ([Education] = @Original_Education) AND ([Burn_place] = @Original_Burn_place) AND ([Age] = @Original_Age) AND ([Contact_phone_number] = @Original_Contact_phone_number))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Anketa] WHERE (([Id_Anketa] = @Original_Id_Anketa) AND ([Speciality] = @Original_Speciality) AND ((@IsNull_MiddleName = 1 AND [MiddleName] IS NULL) OR ([MiddleName] = @Original_MiddleName)) AND ([SurName] = @Original_SurName) AND ([FirstName] = @Original_FirstName) AND ([INN] = @Original_INN) AND ((@IsNull_Past_place_of_work = 1 AND [Past_place_of_work] IS NULL) OR ([Past_place_of_work] = @Original_Past_place_of_work)) AND ([Education] = @Original_Education) AND ([Burn_place] = @Original_Burn_place) AND ([Age] = @Original_Age) AND ([Contact_phone_number] = @Original_Contact_phone_number))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Anket", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anket", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Speciality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speciality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MiddleName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MiddleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2766,9 +2848,10 @@ namespace Personnel_Department_of_the_Institute.Personnel_Department_of_the_Inst
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contact_phone_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact_phone_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Anketa] ([Speciality], [MiddleName], [SurName], [FirstName], [INN], [Past_place_of_work], [Education], [Burn_place], [Age], [Contact_phone_number]) VALUES (@Speciality, @MiddleName, @SurName, @FirstName, @INN, @Past_place_of_work, @Education, @Burn_place, @Age, @Contact_phone_number);
-SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number FROM Anketa WHERE (Id_Anket = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Anketa] ([Id_Anketa], [Speciality], [MiddleName], [SurName], [FirstName], [INN], [Past_place_of_work], [Education], [Burn_place], [Age], [Contact_phone_number]) VALUES (@Id_Anketa, @Speciality, @MiddleName, @SurName, @FirstName, @INN, @Past_place_of_work, @Education, @Burn_place, @Age, @Contact_phone_number);
+SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number FROM Anketa WHERE (Id_Anketa = @Id_Anketa)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speciality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speciality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MiddleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2781,9 +2864,10 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact_phone_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact_phone_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Anketa] SET [Speciality] = @Speciality, [MiddleName] = @MiddleName, [SurName] = @SurName, [FirstName] = @FirstName, [INN] = @INN, [Past_place_of_work] = @Past_place_of_work, [Education] = @Education, [Burn_place] = @Burn_place, [Age] = @Age, [Contact_phone_number] = @Contact_phone_number WHERE (([Id_Anket] = @Original_Id_Anket) AND ([Speciality] = @Original_Speciality) AND ((@IsNull_MiddleName = 1 AND [MiddleName] IS NULL) OR ([MiddleName] = @Original_MiddleName)) AND ([SurName] = @Original_SurName) AND ([FirstName] = @Original_FirstName) AND ([INN] = @Original_INN) AND ((@IsNull_Past_place_of_work = 1 AND [Past_place_of_work] IS NULL) OR ([Past_place_of_work] = @Original_Past_place_of_work)) AND ([Education] = @Original_Education) AND ([Burn_place] = @Original_Burn_place) AND ([Age] = @Original_Age) AND ([Contact_phone_number] = @Original_Contact_phone_number));
-SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number FROM Anketa WHERE (Id_Anket = @Id_Anket)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Anketa] SET [Id_Anketa] = @Id_Anketa, [Speciality] = @Speciality, [MiddleName] = @MiddleName, [SurName] = @SurName, [FirstName] = @FirstName, [INN] = @INN, [Past_place_of_work] = @Past_place_of_work, [Education] = @Education, [Burn_place] = @Burn_place, [Age] = @Age, [Contact_phone_number] = @Contact_phone_number WHERE (([Id_Anketa] = @Original_Id_Anketa) AND ([Speciality] = @Original_Speciality) AND ((@IsNull_MiddleName = 1 AND [MiddleName] IS NULL) OR ([MiddleName] = @Original_MiddleName)) AND ([SurName] = @Original_SurName) AND ([FirstName] = @Original_FirstName) AND ([INN] = @Original_INN) AND ((@IsNull_Past_place_of_work = 1 AND [Past_place_of_work] IS NULL) OR ([Past_place_of_work] = @Original_Past_place_of_work)) AND ([Education] = @Original_Education) AND ([Burn_place] = @Original_Burn_place) AND ([Age] = @Original_Age) AND ([Contact_phone_number] = @Original_Contact_phone_number));
+SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number FROM Anketa WHERE (Id_Anketa = @Id_Anketa)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speciality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speciality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MiddleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2794,7 +2878,7 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Burn_place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Burn_place", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Age", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Age", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact_phone_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact_phone_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Anket", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anket", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Speciality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speciality", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_MiddleName", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MiddleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2807,14 +2891,13 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Burn_place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Burn_place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Age", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Age", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contact_phone_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact_phone_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anket", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anket", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Personnel_Department_of_the_Institute.Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString;
+            this._connection.ConnectionString = global::Personnel_Department_of_the_Institute.Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2823,8 +2906,8 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_w" +
-                "ork, Education, Burn_place, Age, Contact_phone_number FROM dbo.Anketa";
+            this._commandCollection[0].CommandText = "SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_" +
+                "work, Education, Burn_place, Age, Contact_phone_number FROM dbo.Anketa";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2885,8 +2968,8 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id_Anket, string Original_Speciality, string Original_MiddleName, string Original_SurName, string Original_FirstName, int Original_INN, string Original_Past_place_of_work, string Original_Education, string Original_Burn_place, int Original_Age, string Original_Contact_phone_number) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_Anket));
+        public virtual int Delete(int Original_Id_Anketa, string Original_Speciality, string Original_MiddleName, string Original_SurName, string Original_FirstName, int Original_INN, string Original_Past_place_of_work, string Original_Education, string Original_Burn_place, int Original_Age, string Original_Contact_phone_number) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_Anketa));
             if ((Original_Speciality == null)) {
                 throw new global::System.ArgumentNullException("Original_Speciality");
             }
@@ -2961,56 +3044,57 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Speciality, string MiddleName, string SurName, string FirstName, int INN, string Past_place_of_work, string Education, string Burn_place, int Age, string Contact_phone_number) {
+        public virtual int Insert(int Id_Anketa, string Speciality, string MiddleName, string SurName, string FirstName, int INN, string Past_place_of_work, string Education, string Burn_place, int Age, string Contact_phone_number) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_Anketa));
             if ((Speciality == null)) {
                 throw new global::System.ArgumentNullException("Speciality");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Speciality));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Speciality));
             }
             if ((MiddleName == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MiddleName));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(MiddleName));
             }
             if ((SurName == null)) {
                 throw new global::System.ArgumentNullException("SurName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SurName));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SurName));
             }
             if ((FirstName == null)) {
                 throw new global::System.ArgumentNullException("FirstName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FirstName));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FirstName));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(INN));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(INN));
             if ((Past_place_of_work == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Past_place_of_work));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Past_place_of_work));
             }
             if ((Education == null)) {
                 throw new global::System.ArgumentNullException("Education");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Education));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Education));
             }
             if ((Burn_place == null)) {
                 throw new global::System.ArgumentNullException("Burn_place");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Burn_place));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Burn_place));
             }
-            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Age));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(Age));
             if ((Contact_phone_number == null)) {
                 throw new global::System.ArgumentNullException("Contact_phone_number");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Contact_phone_number));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Contact_phone_number));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3033,6 +3117,7 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
+                    int Id_Anketa, 
                     string Speciality, 
                     string MiddleName, 
                     string SurName, 
@@ -3043,7 +3128,7 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
                     string Burn_place, 
                     int Age, 
                     string Contact_phone_number, 
-                    int Original_Id_Anket, 
+                    int Original_Id_Anketa, 
                     string Original_Speciality, 
                     string Original_MiddleName, 
                     string Original_SurName, 
@@ -3053,114 +3138,113 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
                     string Original_Education, 
                     string Original_Burn_place, 
                     int Original_Age, 
-                    string Original_Contact_phone_number, 
-                    int Id_Anket) {
+                    string Original_Contact_phone_number) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_Anketa));
             if ((Speciality == null)) {
                 throw new global::System.ArgumentNullException("Speciality");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Speciality));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Speciality));
             }
             if ((MiddleName == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(MiddleName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(MiddleName));
             }
             if ((SurName == null)) {
                 throw new global::System.ArgumentNullException("SurName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SurName));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SurName));
             }
             if ((FirstName == null)) {
                 throw new global::System.ArgumentNullException("FirstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(FirstName));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FirstName));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(INN));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(INN));
             if ((Past_place_of_work == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Past_place_of_work));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Past_place_of_work));
             }
             if ((Education == null)) {
                 throw new global::System.ArgumentNullException("Education");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Education));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Education));
             }
             if ((Burn_place == null)) {
                 throw new global::System.ArgumentNullException("Burn_place");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Burn_place));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Burn_place));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Age));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Age));
             if ((Contact_phone_number == null)) {
                 throw new global::System.ArgumentNullException("Contact_phone_number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Contact_phone_number));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Contact_phone_number));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Id_Anket));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id_Anketa));
             if ((Original_Speciality == null)) {
                 throw new global::System.ArgumentNullException("Original_Speciality");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Speciality));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Speciality));
             }
             if ((Original_MiddleName == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_MiddleName));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_MiddleName));
             }
             if ((Original_SurName == null)) {
                 throw new global::System.ArgumentNullException("Original_SurName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_SurName));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_SurName));
             }
             if ((Original_FirstName == null)) {
                 throw new global::System.ArgumentNullException("Original_FirstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_FirstName));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_FirstName));
             }
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_INN));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_INN));
             if ((Original_Past_place_of_work == null)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Past_place_of_work));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Past_place_of_work));
             }
             if ((Original_Education == null)) {
                 throw new global::System.ArgumentNullException("Original_Education");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Education));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Education));
             }
             if ((Original_Burn_place == null)) {
                 throw new global::System.ArgumentNullException("Original_Burn_place");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Burn_place));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Burn_place));
             }
-            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_Age));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_Age));
             if ((Original_Contact_phone_number == null)) {
                 throw new global::System.ArgumentNullException("Original_Contact_phone_number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Contact_phone_number));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Contact_phone_number));
             }
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Id_Anket));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3192,7 +3276,7 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
                     string Burn_place, 
                     int Age, 
                     string Contact_phone_number, 
-                    int Original_Id_Anket, 
+                    int Original_Id_Anketa, 
                     string Original_Speciality, 
                     string Original_MiddleName, 
                     string Original_SurName, 
@@ -3203,7 +3287,7 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
                     string Original_Burn_place, 
                     int Original_Age, 
                     string Original_Contact_phone_number) {
-            return this.Update(Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number, Original_Id_Anket, Original_Speciality, Original_MiddleName, Original_SurName, Original_FirstName, Original_INN, Original_Past_place_of_work, Original_Education, Original_Burn_place, Original_Age, Original_Contact_phone_number, Original_Id_Anket);
+            return this.Update(Original_Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number, Original_Id_Anketa, Original_Speciality, Original_MiddleName, Original_SurName, Original_FirstName, Original_INN, Original_Past_place_of_work, Original_Education, Original_Burn_place, Original_Age, Original_Contact_phone_number);
         }
     }
     
@@ -3338,20 +3422,27 @@ SELECT Id_Anket, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Contract] WHERE (([Id_Contract] = @Original_Id_Contract) AND ([Pedagogic_stage] = @Original_Pedagogic_stage) AND ([List_of_disciplines] = @Original_List_of_disciplines) AND ([Load_in_the_current_year_number_of_hours] = @Original_Load_in_the_current_year_number_of_hours) AND ([Date_of_conclusion_of_the_contract] = @Original_Date_of_conclusion_of_the_contract) AND ([Contract_end_date] = @Original_Contract_end_date) AND ([Id_Anketa] = @Original_Id_Anketa))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Contract] WHERE (([Id_Contract] = @Original_Id_Contract) AND ((@IsNull_Pedagogic_stage = 1 AND [Pedagogic_stage] IS NULL) OR ([Pedagogic_stage] = @Original_Pedagogic_stage)) AND ((@IsNull_List_of_disciplines = 1 AND [List_of_disciplines] IS NULL) OR ([List_of_disciplines] = @Original_List_of_disciplines)) AND ((@IsNull_Load_in_the_current_year_number_of_hours = 1 AND [Load_in_the_current_year_number_of_hours] IS NULL) OR ([Load_in_the_current_year_number_of_hours] = @Original_Load_in_the_current_year_number_of_hours)) AND ((@IsNull_Date_of_conclusion_of_the_contract = 1 AND [Date_of_conclusion_of_the_contract] IS NULL) OR ([Date_of_conclusion_of_the_contract] = @Original_Date_of_conclusion_of_the_contract)) AND ((@IsNull_Contract_end_date = 1 AND [Contract_end_date] IS NULL) OR ([Contract_end_date] = @Original_Contract_end_date)) AND ((@IsNull_Id_Anketa = 1 AND [Id_Anketa] IS NULL) OR ([Id_Anketa] = @Original_Id_Anketa)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Contract", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pedagogic_stage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pedagogic_stage", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pedagogic_stage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pedagogic_stage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_List_of_disciplines", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "List_of_disciplines", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_List_of_disciplines", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "List_of_disciplines", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Load_in_the_current_year_number_of_hours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Load_in_the_current_year_number_of_hours", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Load_in_the_current_year_number_of_hours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Load_in_the_current_year_number_of_hours", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_of_conclusion_of_the_contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_of_conclusion_of_the_contract", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_of_conclusion_of_the_contract", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_of_conclusion_of_the_contract", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Contract_end_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_end_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contract_end_date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_end_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Contract] ([Pedagogic_stage], [List_of_disciplines], [Load_in_the_current_year_number_of_hours], [Date_of_conclusion_of_the_contract], [Contract_end_date], [Id_Anketa]) VALUES (@Pedagogic_stage, @List_of_disciplines, @Load_in_the_current_year_number_of_hours, @Date_of_conclusion_of_the_contract, @Contract_end_date, @Id_Anketa);
-SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_year_number_of_hours, Date_of_conclusion_of_the_contract, Contract_end_date, Id_Anketa FROM Contract WHERE (Id_Contract = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Contract] ([Id_Contract], [Pedagogic_stage], [List_of_disciplines], [Load_in_the_current_year_number_of_hours], [Date_of_conclusion_of_the_contract], [Contract_end_date], [Id_Anketa]) VALUES (@Id_Contract, @Pedagogic_stage, @List_of_disciplines, @Load_in_the_current_year_number_of_hours, @Date_of_conclusion_of_the_contract, @Contract_end_date, @Id_Anketa);
+SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_year_number_of_hours, Date_of_conclusion_of_the_contract, Contract_end_date, Id_Anketa FROM Contract WHERE (Id_Contract = @Id_Contract)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Contract", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pedagogic_stage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pedagogic_stage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@List_of_disciplines", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "List_of_disciplines", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Load_in_the_current_year_number_of_hours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Load_in_the_current_year_number_of_hours", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3360,9 +3451,27 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Contract] SET [Pedagogic_stage] = @Pedagogic_stage, [List_of_disciplines] = @List_of_disciplines, [Load_in_the_current_year_number_of_hours] = @Load_in_the_current_year_number_of_hours, [Date_of_conclusion_of_the_contract] = @Date_of_conclusion_of_the_contract, [Contract_end_date] = @Contract_end_date, [Id_Anketa] = @Id_Anketa WHERE (([Id_Contract] = @Original_Id_Contract) AND ([Pedagogic_stage] = @Original_Pedagogic_stage) AND ([List_of_disciplines] = @Original_List_of_disciplines) AND ([Load_in_the_current_year_number_of_hours] = @Original_Load_in_the_current_year_number_of_hours) AND ([Date_of_conclusion_of_the_contract] = @Original_Date_of_conclusion_of_the_contract) AND ([Contract_end_date] = @Original_Contract_end_date) AND ([Id_Anketa] = @Original_Id_Anketa));
-SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_year_number_of_hours, Date_of_conclusion_of_the_contract, Contract_end_date, Id_Anketa FROM Contract WHERE (Id_Contract = @Id_Contract)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Contract] SET [Id_Contract] = @Id_Contract, [Pedagogic_stage] = @Pe" +
+                "dagogic_stage, [List_of_disciplines] = @List_of_disciplines, [Load_in_the_curren" +
+                "t_year_number_of_hours] = @Load_in_the_current_year_number_of_hours, [Date_of_co" +
+                "nclusion_of_the_contract] = @Date_of_conclusion_of_the_contract, [Contract_end_d" +
+                "ate] = @Contract_end_date, [Id_Anketa] = @Id_Anketa WHERE (([Id_Contract] = @Ori" +
+                "ginal_Id_Contract) AND ((@IsNull_Pedagogic_stage = 1 AND [Pedagogic_stage] IS NU" +
+                "LL) OR ([Pedagogic_stage] = @Original_Pedagogic_stage)) AND ((@IsNull_List_of_di" +
+                "sciplines = 1 AND [List_of_disciplines] IS NULL) OR ([List_of_disciplines] = @Or" +
+                "iginal_List_of_disciplines)) AND ((@IsNull_Load_in_the_current_year_number_of_ho" +
+                "urs = 1 AND [Load_in_the_current_year_number_of_hours] IS NULL) OR ([Load_in_the" +
+                "_current_year_number_of_hours] = @Original_Load_in_the_current_year_number_of_ho" +
+                "urs)) AND ((@IsNull_Date_of_conclusion_of_the_contract = 1 AND [Date_of_conclusi" +
+                "on_of_the_contract] IS NULL) OR ([Date_of_conclusion_of_the_contract] = @Origina" +
+                "l_Date_of_conclusion_of_the_contract)) AND ((@IsNull_Contract_end_date = 1 AND [" +
+                "Contract_end_date] IS NULL) OR ([Contract_end_date] = @Original_Contract_end_dat" +
+                "e)) AND ((@IsNull_Id_Anketa = 1 AND [Id_Anketa] IS NULL) OR ([Id_Anketa] = @Orig" +
+                "inal_Id_Anketa)));\r\nSELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Lo" +
+                "ad_in_the_current_year_number_of_hours, Date_of_conclusion_of_the_contract, Cont" +
+                "ract_end_date, Id_Anketa FROM Contract WHERE (Id_Contract = @Id_Contract)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Contract", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pedagogic_stage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pedagogic_stage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@List_of_disciplines", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "List_of_disciplines", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Load_in_the_current_year_number_of_hours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Load_in_the_current_year_number_of_hours", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3370,20 +3479,25 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contract_end_date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_end_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Contract", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Pedagogic_stage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pedagogic_stage", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Pedagogic_stage", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pedagogic_stage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_List_of_disciplines", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "List_of_disciplines", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_List_of_disciplines", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "List_of_disciplines", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Load_in_the_current_year_number_of_hours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Load_in_the_current_year_number_of_hours", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Load_in_the_current_year_number_of_hours", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Load_in_the_current_year_number_of_hours", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Date_of_conclusion_of_the_contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_of_conclusion_of_the_contract", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Date_of_conclusion_of_the_contract", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_of_conclusion_of_the_contract", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Contract_end_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_end_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contract_end_date", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contract_end_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Contract", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Contract", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Personnel_Department_of_the_Institute.Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString;
+            this._connection.ConnectionString = global::Personnel_Department_of_the_Institute.Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3455,29 +3569,56 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id_Contract, int Original_Pedagogic_stage, string Original_List_of_disciplines, int Original_Load_in_the_current_year_number_of_hours, string Original_Date_of_conclusion_of_the_contract, string Original_Contract_end_date, int Original_Id_Anketa) {
+        public virtual int Delete(int Original_Id_Contract, global::System.Nullable<int> Original_Pedagogic_stage, string Original_List_of_disciplines, global::System.Nullable<int> Original_Load_in_the_current_year_number_of_hours, string Original_Date_of_conclusion_of_the_contract, string Original_Contract_end_date, global::System.Nullable<int> Original_Id_Anketa) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id_Contract));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Pedagogic_stage));
+            if ((Original_Pedagogic_stage.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Pedagogic_stage.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((Original_List_of_disciplines == null)) {
-                throw new global::System.ArgumentNullException("Original_List_of_disciplines");
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_List_of_disciplines));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_List_of_disciplines));
             }
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Load_in_the_current_year_number_of_hours));
+            if ((Original_Load_in_the_current_year_number_of_hours.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Load_in_the_current_year_number_of_hours.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             if ((Original_Date_of_conclusion_of_the_contract == null)) {
-                throw new global::System.ArgumentNullException("Original_Date_of_conclusion_of_the_contract");
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Date_of_conclusion_of_the_contract));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_Date_of_conclusion_of_the_contract));
             }
             if ((Original_Contract_end_date == null)) {
-                throw new global::System.ArgumentNullException("Original_Contract_end_date");
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_Contract_end_date));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Contract_end_date));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Id_Anketa));
+            if ((Original_Id_Anketa.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Id_Anketa.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3498,28 +3639,44 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Pedagogic_stage, string List_of_disciplines, int Load_in_the_current_year_number_of_hours, string Date_of_conclusion_of_the_contract, string Contract_end_date, int Id_Anketa) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Pedagogic_stage));
+        public virtual int Insert(int Id_Contract, global::System.Nullable<int> Pedagogic_stage, string List_of_disciplines, global::System.Nullable<int> Load_in_the_current_year_number_of_hours, string Date_of_conclusion_of_the_contract, string Contract_end_date, global::System.Nullable<int> Id_Anketa) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_Contract));
+            if ((Pedagogic_stage.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Pedagogic_stage.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((List_of_disciplines == null)) {
-                throw new global::System.ArgumentNullException("List_of_disciplines");
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(List_of_disciplines));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(List_of_disciplines));
             }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Load_in_the_current_year_number_of_hours));
+            if ((Load_in_the_current_year_number_of_hours.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Load_in_the_current_year_number_of_hours.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             if ((Date_of_conclusion_of_the_contract == null)) {
-                throw new global::System.ArgumentNullException("Date_of_conclusion_of_the_contract");
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Date_of_conclusion_of_the_contract));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Date_of_conclusion_of_the_contract));
             }
             if ((Contract_end_date == null)) {
-                throw new global::System.ArgumentNullException("Contract_end_date");
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Contract_end_date));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Contract_end_date));
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Id_Anketa));
+            if ((Id_Anketa.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Id_Anketa.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3540,51 +3697,93 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Pedagogic_stage, string List_of_disciplines, int Load_in_the_current_year_number_of_hours, string Date_of_conclusion_of_the_contract, string Contract_end_date, int Id_Anketa, int Original_Id_Contract, int Original_Pedagogic_stage, string Original_List_of_disciplines, int Original_Load_in_the_current_year_number_of_hours, string Original_Date_of_conclusion_of_the_contract, string Original_Contract_end_date, int Original_Id_Anketa, int Id_Contract) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Pedagogic_stage));
+        public virtual int Update(int Id_Contract, global::System.Nullable<int> Pedagogic_stage, string List_of_disciplines, global::System.Nullable<int> Load_in_the_current_year_number_of_hours, string Date_of_conclusion_of_the_contract, string Contract_end_date, global::System.Nullable<int> Id_Anketa, int Original_Id_Contract, global::System.Nullable<int> Original_Pedagogic_stage, string Original_List_of_disciplines, global::System.Nullable<int> Original_Load_in_the_current_year_number_of_hours, string Original_Date_of_conclusion_of_the_contract, string Original_Contract_end_date, global::System.Nullable<int> Original_Id_Anketa) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_Contract));
+            if ((Pedagogic_stage.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Pedagogic_stage.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((List_of_disciplines == null)) {
-                throw new global::System.ArgumentNullException("List_of_disciplines");
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(List_of_disciplines));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(List_of_disciplines));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Load_in_the_current_year_number_of_hours));
+            if ((Load_in_the_current_year_number_of_hours.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Load_in_the_current_year_number_of_hours.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
             if ((Date_of_conclusion_of_the_contract == null)) {
-                throw new global::System.ArgumentNullException("Date_of_conclusion_of_the_contract");
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Date_of_conclusion_of_the_contract));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Date_of_conclusion_of_the_contract));
             }
             if ((Contract_end_date == null)) {
-                throw new global::System.ArgumentNullException("Contract_end_date");
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Contract_end_date));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Contract_end_date));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Id_Anketa));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_Id_Contract));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Pedagogic_stage));
+            if ((Id_Anketa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Id_Anketa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Id_Contract));
+            if ((Original_Pedagogic_stage.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Pedagogic_stage.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             if ((Original_List_of_disciplines == null)) {
-                throw new global::System.ArgumentNullException("Original_List_of_disciplines");
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_List_of_disciplines));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_List_of_disciplines));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Load_in_the_current_year_number_of_hours));
+            if ((Original_Load_in_the_current_year_number_of_hours.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Load_in_the_current_year_number_of_hours.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
             if ((Original_Date_of_conclusion_of_the_contract == null)) {
-                throw new global::System.ArgumentNullException("Original_Date_of_conclusion_of_the_contract");
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Date_of_conclusion_of_the_contract));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Date_of_conclusion_of_the_contract));
             }
             if ((Original_Contract_end_date == null)) {
-                throw new global::System.ArgumentNullException("Original_Contract_end_date");
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Contract_end_date));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Contract_end_date));
             }
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_Id_Anketa));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Id_Contract));
+            if ((Original_Id_Anketa.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Id_Anketa.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3605,8 +3804,8 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Pedagogic_stage, string List_of_disciplines, int Load_in_the_current_year_number_of_hours, string Date_of_conclusion_of_the_contract, string Contract_end_date, int Id_Anketa, int Original_Id_Contract, int Original_Pedagogic_stage, string Original_List_of_disciplines, int Original_Load_in_the_current_year_number_of_hours, string Original_Date_of_conclusion_of_the_contract, string Original_Contract_end_date, int Original_Id_Anketa) {
-            return this.Update(Pedagogic_stage, List_of_disciplines, Load_in_the_current_year_number_of_hours, Date_of_conclusion_of_the_contract, Contract_end_date, Id_Anketa, Original_Id_Contract, Original_Pedagogic_stage, Original_List_of_disciplines, Original_Load_in_the_current_year_number_of_hours, Original_Date_of_conclusion_of_the_contract, Original_Contract_end_date, Original_Id_Anketa, Original_Id_Contract);
+        public virtual int Update(global::System.Nullable<int> Pedagogic_stage, string List_of_disciplines, global::System.Nullable<int> Load_in_the_current_year_number_of_hours, string Date_of_conclusion_of_the_contract, string Contract_end_date, global::System.Nullable<int> Id_Anketa, int Original_Id_Contract, global::System.Nullable<int> Original_Pedagogic_stage, string Original_List_of_disciplines, global::System.Nullable<int> Original_Load_in_the_current_year_number_of_hours, string Original_Date_of_conclusion_of_the_contract, string Original_Contract_end_date, global::System.Nullable<int> Original_Id_Anketa) {
+            return this.Update(Original_Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_year_number_of_hours, Date_of_conclusion_of_the_contract, Contract_end_date, Id_Anketa, Original_Id_Contract, Original_Pedagogic_stage, Original_List_of_disciplines, Original_Load_in_the_current_year_number_of_hours, Original_Date_of_conclusion_of_the_contract, Original_Contract_end_date, Original_Id_Anketa);
         }
     }
     
@@ -3730,7 +3929,7 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Information about teachers";
+            tableMapping.DataSetTable = "Information_about_teachers";
             tableMapping.ColumnMappings.Add("Id_Teach", "Id_Teach");
             tableMapping.ColumnMappings.Add("Position_Degree_title", "Position_Degree_title");
             tableMapping.ColumnMappings.Add("Date_start_end_of_the_vacation", "Date_start_end_of_the_vacation");
@@ -3743,7 +3942,7 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Information about teachers] WHERE (([Id_Teach] = @Original_Id_Teach) AND ((@IsNull_Position_Degree_title = 1 AND [Position_Degree_title] IS NULL) OR ([Position_Degree_title] = @Original_Position_Degree_title)) AND ([Date_start_end_of_the_vacation] = @Original_Date_start_end_of_the_vacation) AND ([Date_of_admission_to_work] = @Original_Date_of_admission_to_work) AND ([Passport_data] = @Original_Passport_data) AND ([Name_of_the_department_or_department] = @Original_Name_of_the_department_or_department) AND ([Pension_certificate_number] = @Original_Pension_certificate_number) AND ((@IsNull_Government_awards = 1 AND [Government_awards] IS NULL) OR ([Government_awards] = @Original_Government_awards)) AND ([Id_Contract] = @Original_Id_Contract))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Information_about_teachers] WHERE (([Id_Teach] = @Original_Id_Teach) AND ((@IsNull_Position_Degree_title = 1 AND [Position_Degree_title] IS NULL) OR ([Position_Degree_title] = @Original_Position_Degree_title)) AND ([Date_start_end_of_the_vacation] = @Original_Date_start_end_of_the_vacation) AND ([Date_of_admission_to_work] = @Original_Date_of_admission_to_work) AND ([Passport_data] = @Original_Passport_data) AND ([Name_of_the_department_or_department] = @Original_Name_of_the_department_or_department) AND ([Pension_certificate_number] = @Original_Pension_certificate_number) AND ((@IsNull_Government_awards = 1 AND [Government_awards] IS NULL) OR ([Government_awards] = @Original_Government_awards)) AND ([Id_Contract] = @Original_Id_Contract))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Teach", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Teach", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Position_Degree_title", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position_Degree_title", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3758,9 +3957,10 @@ SELECT Id_Contract, Pedagogic_stage, List_of_disciplines, Load_in_the_current_ye
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Contract", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Information about teachers] ([Position_Degree_title], [Date_start_end_of_the_vacation], [Date_of_admission_to_work], [Passport_data], [Name_of_the_department_or_department], [Pension_certificate_number], [Government_awards], [Id_Contract]) VALUES (@Position_Degree_title, @Date_start_end_of_the_vacation, @Date_of_admission_to_work, @Passport_data, @Name_of_the_department_or_department, @Pension_certificate_number, @Government_awards, @Id_Contract);
-SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_admission_to_work, Passport_data, Name_of_the_department_or_department, Pension_certificate_number, Government_awards, Id_Contract FROM [Information about teachers] WHERE (Id_Teach = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Information_about_teachers] ([Id_Teach], [Position_Degree_title], [Date_start_end_of_the_vacation], [Date_of_admission_to_work], [Passport_data], [Name_of_the_department_or_department], [Pension_certificate_number], [Government_awards], [Id_Contract]) VALUES (@Id_Teach, @Position_Degree_title, @Date_start_end_of_the_vacation, @Date_of_admission_to_work, @Passport_data, @Name_of_the_department_or_department, @Pension_certificate_number, @Government_awards, @Id_Contract);
+SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_admission_to_work, Passport_data, Name_of_the_department_or_department, Pension_certificate_number, Government_awards, Id_Contract FROM Information_about_teachers WHERE (Id_Teach = @Id_Teach)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Teach", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Teach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Position_Degree_title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position_Degree_title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_start_end_of_the_vacation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_start_end_of_the_vacation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_of_admission_to_work", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_of_admission_to_work", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3771,9 +3971,10 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Contract", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Information about teachers] SET [Position_Degree_title] = @Position_Degree_title, [Date_start_end_of_the_vacation] = @Date_start_end_of_the_vacation, [Date_of_admission_to_work] = @Date_of_admission_to_work, [Passport_data] = @Passport_data, [Name_of_the_department_or_department] = @Name_of_the_department_or_department, [Pension_certificate_number] = @Pension_certificate_number, [Government_awards] = @Government_awards, [Id_Contract] = @Id_Contract WHERE (([Id_Teach] = @Original_Id_Teach) AND ((@IsNull_Position_Degree_title = 1 AND [Position_Degree_title] IS NULL) OR ([Position_Degree_title] = @Original_Position_Degree_title)) AND ([Date_start_end_of_the_vacation] = @Original_Date_start_end_of_the_vacation) AND ([Date_of_admission_to_work] = @Original_Date_of_admission_to_work) AND ([Passport_data] = @Original_Passport_data) AND ([Name_of_the_department_or_department] = @Original_Name_of_the_department_or_department) AND ([Pension_certificate_number] = @Original_Pension_certificate_number) AND ((@IsNull_Government_awards = 1 AND [Government_awards] IS NULL) OR ([Government_awards] = @Original_Government_awards)) AND ([Id_Contract] = @Original_Id_Contract));
-SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_admission_to_work, Passport_data, Name_of_the_department_or_department, Pension_certificate_number, Government_awards, Id_Contract FROM [Information about teachers] WHERE (Id_Teach = @Id_Teach)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Information_about_teachers] SET [Id_Teach] = @Id_Teach, [Position_Degree_title] = @Position_Degree_title, [Date_start_end_of_the_vacation] = @Date_start_end_of_the_vacation, [Date_of_admission_to_work] = @Date_of_admission_to_work, [Passport_data] = @Passport_data, [Name_of_the_department_or_department] = @Name_of_the_department_or_department, [Pension_certificate_number] = @Pension_certificate_number, [Government_awards] = @Government_awards, [Id_Contract] = @Id_Contract WHERE (([Id_Teach] = @Original_Id_Teach) AND ((@IsNull_Position_Degree_title = 1 AND [Position_Degree_title] IS NULL) OR ([Position_Degree_title] = @Original_Position_Degree_title)) AND ([Date_start_end_of_the_vacation] = @Original_Date_start_end_of_the_vacation) AND ([Date_of_admission_to_work] = @Original_Date_of_admission_to_work) AND ([Passport_data] = @Original_Passport_data) AND ([Name_of_the_department_or_department] = @Original_Name_of_the_department_or_department) AND ([Pension_certificate_number] = @Original_Pension_certificate_number) AND ((@IsNull_Government_awards = 1 AND [Government_awards] IS NULL) OR ([Government_awards] = @Original_Government_awards)) AND ([Id_Contract] = @Original_Id_Contract));
+SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_admission_to_work, Passport_data, Name_of_the_department_or_department, Pension_certificate_number, Government_awards, Id_Contract FROM Information_about_teachers WHERE (Id_Teach = @Id_Teach)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Teach", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Teach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Position_Degree_title", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Position_Degree_title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_start_end_of_the_vacation", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_start_end_of_the_vacation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_of_admission_to_work", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_of_admission_to_work", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3793,14 +3994,13 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Government_awards", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Government_awards", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Government_awards", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Government_awards", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Contract", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Contract", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Teach", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Teach", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Personnel_Department_of_the_Institute.Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString;
+            this._connection.ConnectionString = global::Personnel_Department_of_the_Institute.Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3811,8 +4011,8 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_a" +
                 "dmission_to_work, Passport_data, Name_of_the_department_or_department, Pension_c" +
-                "ertificate_number, Government_awards, Id_Contract FROM dbo.[Information about te" +
-                "achers]";
+                "ertificate_number, Government_awards, Id_Contract FROM dbo.Information_about_tea" +
+                "chers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3851,7 +4051,7 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(Personnel_Department_of_the_InstituteDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Information about teachers");
+            return this.Adapter.Update(dataSet, "Information_about_teachers");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3942,50 +4142,51 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Position_Degree_title, string Date_start_end_of_the_vacation, string Date_of_admission_to_work, string Passport_data, string Name_of_the_department_or_department, string Pension_certificate_number, string Government_awards, int Id_Contract) {
+        public virtual int Insert(int Id_Teach, string Position_Degree_title, string Date_start_end_of_the_vacation, string Date_of_admission_to_work, string Passport_data, string Name_of_the_department_or_department, string Pension_certificate_number, string Government_awards, int Id_Contract) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_Teach));
             if ((Position_Degree_title == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Position_Degree_title));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Position_Degree_title));
             }
             if ((Date_start_end_of_the_vacation == null)) {
                 throw new global::System.ArgumentNullException("Date_start_end_of_the_vacation");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Date_start_end_of_the_vacation));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Date_start_end_of_the_vacation));
             }
             if ((Date_of_admission_to_work == null)) {
                 throw new global::System.ArgumentNullException("Date_of_admission_to_work");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Date_of_admission_to_work));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Date_of_admission_to_work));
             }
             if ((Passport_data == null)) {
                 throw new global::System.ArgumentNullException("Passport_data");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Passport_data));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Passport_data));
             }
             if ((Name_of_the_department_or_department == null)) {
                 throw new global::System.ArgumentNullException("Name_of_the_department_or_department");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Name_of_the_department_or_department));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Name_of_the_department_or_department));
             }
             if ((Pension_certificate_number == null)) {
                 throw new global::System.ArgumentNullException("Pension_certificate_number");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Pension_certificate_number));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Pension_certificate_number));
             }
             if ((Government_awards == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Government_awards));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Government_awards));
             }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Id_Contract));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Id_Contract));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4007,6 +4208,7 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
+                    int Id_Teach, 
                     string Position_Degree_title, 
                     string Date_start_end_of_the_vacation, 
                     string Date_of_admission_to_work, 
@@ -4023,100 +4225,99 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
                     string Original_Name_of_the_department_or_department, 
                     string Original_Pension_certificate_number, 
                     string Original_Government_awards, 
-                    int Original_Id_Contract, 
-                    int Id_Teach) {
+                    int Original_Id_Contract) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_Teach));
             if ((Position_Degree_title == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Position_Degree_title));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Position_Degree_title));
             }
             if ((Date_start_end_of_the_vacation == null)) {
                 throw new global::System.ArgumentNullException("Date_start_end_of_the_vacation");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Date_start_end_of_the_vacation));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Date_start_end_of_the_vacation));
             }
             if ((Date_of_admission_to_work == null)) {
                 throw new global::System.ArgumentNullException("Date_of_admission_to_work");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Date_of_admission_to_work));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Date_of_admission_to_work));
             }
             if ((Passport_data == null)) {
                 throw new global::System.ArgumentNullException("Passport_data");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Passport_data));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Passport_data));
             }
             if ((Name_of_the_department_or_department == null)) {
                 throw new global::System.ArgumentNullException("Name_of_the_department_or_department");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Name_of_the_department_or_department));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Name_of_the_department_or_department));
             }
             if ((Pension_certificate_number == null)) {
                 throw new global::System.ArgumentNullException("Pension_certificate_number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Pension_certificate_number));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Pension_certificate_number));
             }
             if ((Government_awards == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Government_awards));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Government_awards));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Id_Contract));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Id_Teach));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Id_Contract));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Id_Teach));
             if ((Original_Position_Degree_title == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Position_Degree_title));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Position_Degree_title));
             }
             if ((Original_Date_start_end_of_the_vacation == null)) {
                 throw new global::System.ArgumentNullException("Original_Date_start_end_of_the_vacation");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Date_start_end_of_the_vacation));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Date_start_end_of_the_vacation));
             }
             if ((Original_Date_of_admission_to_work == null)) {
                 throw new global::System.ArgumentNullException("Original_Date_of_admission_to_work");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Date_of_admission_to_work));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Date_of_admission_to_work));
             }
             if ((Original_Passport_data == null)) {
                 throw new global::System.ArgumentNullException("Original_Passport_data");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Passport_data));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Passport_data));
             }
             if ((Original_Name_of_the_department_or_department == null)) {
                 throw new global::System.ArgumentNullException("Original_Name_of_the_department_or_department");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_Name_of_the_department_or_department));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Name_of_the_department_or_department));
             }
             if ((Original_Pension_certificate_number == null)) {
                 throw new global::System.ArgumentNullException("Original_Pension_certificate_number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Pension_certificate_number));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Pension_certificate_number));
             }
             if ((Original_Government_awards == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Government_awards));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Government_awards));
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_Id_Contract));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Id_Teach));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Id_Contract));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4155,7 +4356,7 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
                     string Original_Pension_certificate_number, 
                     string Original_Government_awards, 
                     int Original_Id_Contract) {
-            return this.Update(Position_Degree_title, Date_start_end_of_the_vacation, Date_of_admission_to_work, Passport_data, Name_of_the_department_or_department, Pension_certificate_number, Government_awards, Id_Contract, Original_Id_Teach, Original_Position_Degree_title, Original_Date_start_end_of_the_vacation, Original_Date_of_admission_to_work, Original_Passport_data, Original_Name_of_the_department_or_department, Original_Pension_certificate_number, Original_Government_awards, Original_Id_Contract, Original_Id_Teach);
+            return this.Update(Original_Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_admission_to_work, Passport_data, Name_of_the_department_or_department, Pension_certificate_number, Government_awards, Id_Contract, Original_Id_Teach, Original_Position_Degree_title, Original_Date_start_end_of_the_vacation, Original_Date_of_admission_to_work, Original_Passport_data, Original_Name_of_the_department_or_department, Original_Pension_certificate_number, Original_Government_awards, Original_Id_Contract);
         }
     }
     
@@ -4299,18 +4500,20 @@ SELECT Id_Teach, Position_Degree_title, Date_start_end_of_the_vacation, Date_of_
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Anket", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anket", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Labour_book_data] ([Number_and_date_of_issue], [Date_and_number_of_the_enrolment_order], [Moving_to_another_unit], [Id_Anket]) VALUES (@Number_and_date_of_issue, @Date_and_number_of_the_enrolment_order, @Moving_to_another_unit, @Id_Anket);
-SELECT Id_Labour_book, Number_and_date_of_issue, Date_and_number_of_the_enrolment_order, Moving_to_another_unit, Id_Anket FROM Labour_book_data WHERE (Id_Labour_book = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Labour_book_data] ([Id_Labour_book], [Number_and_date_of_issue], [Date_and_number_of_the_enrolment_order], [Moving_to_another_unit], [Id_Anket]) VALUES (@Id_Labour_book, @Number_and_date_of_issue, @Date_and_number_of_the_enrolment_order, @Moving_to_another_unit, @Id_Anket);
+SELECT Id_Labour_book, Number_and_date_of_issue, Date_and_number_of_the_enrolment_order, Moving_to_another_unit, Id_Anket FROM Labour_book_data WHERE (Id_Labour_book = @Id_Labour_book)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Labour_book", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Labour_book", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number_and_date_of_issue", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number_and_date_of_issue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_and_number_of_the_enrolment_order", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_and_number_of_the_enrolment_order", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Moving_to_another_unit", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Moving_to_another_unit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anket", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anket", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Labour_book_data] SET [Number_and_date_of_issue] = @Number_and_date_of_issue, [Date_and_number_of_the_enrolment_order] = @Date_and_number_of_the_enrolment_order, [Moving_to_another_unit] = @Moving_to_another_unit, [Id_Anket] = @Id_Anket WHERE (([Id_Labour_book] = @Original_Id_Labour_book) AND ([Number_and_date_of_issue] = @Original_Number_and_date_of_issue) AND ((@IsNull_Date_and_number_of_the_enrolment_order = 1 AND [Date_and_number_of_the_enrolment_order] IS NULL) OR ([Date_and_number_of_the_enrolment_order] = @Original_Date_and_number_of_the_enrolment_order)) AND ((@IsNull_Moving_to_another_unit = 1 AND [Moving_to_another_unit] IS NULL) OR ([Moving_to_another_unit] = @Original_Moving_to_another_unit)) AND ([Id_Anket] = @Original_Id_Anket));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Labour_book_data] SET [Id_Labour_book] = @Id_Labour_book, [Number_and_date_of_issue] = @Number_and_date_of_issue, [Date_and_number_of_the_enrolment_order] = @Date_and_number_of_the_enrolment_order, [Moving_to_another_unit] = @Moving_to_another_unit, [Id_Anket] = @Id_Anket WHERE (([Id_Labour_book] = @Original_Id_Labour_book) AND ([Number_and_date_of_issue] = @Original_Number_and_date_of_issue) AND ((@IsNull_Date_and_number_of_the_enrolment_order = 1 AND [Date_and_number_of_the_enrolment_order] IS NULL) OR ([Date_and_number_of_the_enrolment_order] = @Original_Date_and_number_of_the_enrolment_order)) AND ((@IsNull_Moving_to_another_unit = 1 AND [Moving_to_another_unit] IS NULL) OR ([Moving_to_another_unit] = @Original_Moving_to_another_unit)) AND ([Id_Anket] = @Original_Id_Anket));
 SELECT Id_Labour_book, Number_and_date_of_issue, Date_and_number_of_the_enrolment_order, Moving_to_another_unit, Id_Anket FROM Labour_book_data WHERE (Id_Labour_book = @Id_Labour_book)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Labour_book", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Labour_book", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Number_and_date_of_issue", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Number_and_date_of_issue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date_and_number_of_the_enrolment_order", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date_and_number_of_the_enrolment_order", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Moving_to_another_unit", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Moving_to_another_unit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4322,14 +4525,13 @@ SELECT Id_Labour_book, Number_and_date_of_issue, Date_and_number_of_the_enrolmen
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Moving_to_another_unit", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Moving_to_another_unit", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Moving_to_another_unit", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Moving_to_another_unit", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id_Anket", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anket", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Labour_book", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Labour_book", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Personnel_Department_of_the_Institute.Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString;
+            this._connection.ConnectionString = global::Personnel_Department_of_the_Institute.Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4445,26 +4647,27 @@ SELECT Id_Labour_book, Number_and_date_of_issue, Date_and_number_of_the_enrolmen
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Number_and_date_of_issue, string Date_and_number_of_the_enrolment_order, string Moving_to_another_unit, int Id_Anket) {
+        public virtual int Insert(int Id_Labour_book, string Number_and_date_of_issue, string Date_and_number_of_the_enrolment_order, string Moving_to_another_unit, int Id_Anket) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_Labour_book));
             if ((Number_and_date_of_issue == null)) {
                 throw new global::System.ArgumentNullException("Number_and_date_of_issue");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Number_and_date_of_issue));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Number_and_date_of_issue));
             }
             if ((Date_and_number_of_the_enrolment_order == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Date_and_number_of_the_enrolment_order));
-            }
-            if ((Moving_to_another_unit == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Moving_to_another_unit));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Date_and_number_of_the_enrolment_order));
             }
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Id_Anket));
+            if ((Moving_to_another_unit == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Moving_to_another_unit));
+            }
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Id_Anket));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4485,51 +4688,51 @@ SELECT Id_Labour_book, Number_and_date_of_issue, Date_and_number_of_the_enrolmen
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Number_and_date_of_issue, string Date_and_number_of_the_enrolment_order, string Moving_to_another_unit, int Id_Anket, int Original_Id_Labour_book, string Original_Number_and_date_of_issue, string Original_Date_and_number_of_the_enrolment_order, string Original_Moving_to_another_unit, int Original_Id_Anket, int Id_Labour_book) {
+        public virtual int Update(int Id_Labour_book, string Number_and_date_of_issue, string Date_and_number_of_the_enrolment_order, string Moving_to_another_unit, int Id_Anket, int Original_Id_Labour_book, string Original_Number_and_date_of_issue, string Original_Date_and_number_of_the_enrolment_order, string Original_Moving_to_another_unit, int Original_Id_Anket) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_Labour_book));
             if ((Number_and_date_of_issue == null)) {
                 throw new global::System.ArgumentNullException("Number_and_date_of_issue");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Number_and_date_of_issue));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Number_and_date_of_issue));
             }
             if ((Date_and_number_of_the_enrolment_order == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Date_and_number_of_the_enrolment_order));
-            }
-            if ((Moving_to_another_unit == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Moving_to_another_unit));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Date_and_number_of_the_enrolment_order));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Id_Anket));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id_Labour_book));
+            if ((Moving_to_another_unit == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Moving_to_another_unit));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Id_Anket));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id_Labour_book));
             if ((Original_Number_and_date_of_issue == null)) {
                 throw new global::System.ArgumentNullException("Original_Number_and_date_of_issue");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Number_and_date_of_issue));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Number_and_date_of_issue));
             }
             if ((Original_Date_and_number_of_the_enrolment_order == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Date_and_number_of_the_enrolment_order));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Date_and_number_of_the_enrolment_order));
             }
             if ((Original_Moving_to_another_unit == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Moving_to_another_unit));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Moving_to_another_unit));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Id_Anket));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Id_Labour_book));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id_Anket));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4551,7 +4754,7 @@ SELECT Id_Labour_book, Number_and_date_of_issue, Date_and_number_of_the_enrolmen
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Number_and_date_of_issue, string Date_and_number_of_the_enrolment_order, string Moving_to_another_unit, int Id_Anket, int Original_Id_Labour_book, string Original_Number_and_date_of_issue, string Original_Date_and_number_of_the_enrolment_order, string Original_Moving_to_another_unit, int Original_Id_Anket) {
-            return this.Update(Number_and_date_of_issue, Date_and_number_of_the_enrolment_order, Moving_to_another_unit, Id_Anket, Original_Id_Labour_book, Original_Number_and_date_of_issue, Original_Date_and_number_of_the_enrolment_order, Original_Moving_to_another_unit, Original_Id_Anket, Original_Id_Labour_book);
+            return this.Update(Original_Id_Labour_book, Number_and_date_of_issue, Date_and_number_of_the_enrolment_order, Moving_to_another_unit, Id_Anket, Original_Id_Labour_book, Original_Number_and_date_of_issue, Original_Date_and_number_of_the_enrolment_order, Original_Moving_to_another_unit, Original_Id_Anket);
         }
     }
     

@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label id_AnketLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAnket));
+            System.Windows.Forms.Label id_AnketaLabel;
             System.Windows.Forms.Label specialityLabel;
             System.Windows.Forms.Label middleNameLabel;
             System.Windows.Forms.Label surNameLabel;
@@ -40,27 +41,24 @@
             System.Windows.Forms.Label burn_placeLabel;
             System.Windows.Forms.Label ageLabel;
             System.Windows.Forms.Label contact_phone_numberLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAnket));
             this.personnel_Department_of_the_InstituteDataSet = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSet();
             this.anketaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.anketaTableAdapter = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSetTableAdapters.AnketaTableAdapter();
             this.tableAdapterManager = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSetTableAdapters.TableAdapterManager();
             this.anketaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.anketaBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.TextBoxStripTool = new System.Windows.Forms.ToolStripTextBox();
-            this.SearchToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.id_AnketTextBox = new System.Windows.Forms.TextBox();
+            this.id_AnketaTextBox = new System.Windows.Forms.TextBox();
             this.specialityTextBox = new System.Windows.Forms.TextBox();
             this.middleNameTextBox = new System.Windows.Forms.TextBox();
             this.surNameTextBox = new System.Windows.Forms.TextBox();
@@ -71,6 +69,8 @@
             this.burn_placeTextBox = new System.Windows.Forms.TextBox();
             this.ageTextBox = new System.Windows.Forms.TextBox();
             this.contact_phone_numberTextBox = new System.Windows.Forms.TextBox();
+            this.TextBoxStripTool = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.contractBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contractTableAdapter = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSetTableAdapters.ContractTableAdapter();
             this.contractDataGridView = new System.Windows.Forms.DataGridView();
@@ -81,20 +81,7 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            id_AnketLabel = new System.Windows.Forms.Label();
+            id_AnketaLabel = new System.Windows.Forms.Label();
             specialityLabel = new System.Windows.Forms.Label();
             middleNameLabel = new System.Windows.Forms.Label();
             surNameLabel = new System.Windows.Forms.Label();
@@ -111,108 +98,7 @@
             this.anketaBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contractBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // id_AnketLabel
-            // 
-            id_AnketLabel.AutoSize = true;
-            id_AnketLabel.Location = new System.Drawing.Point(9, 41);
-            id_AnketLabel.Name = "id_AnketLabel";
-            id_AnketLabel.Size = new System.Drawing.Size(50, 13);
-            id_AnketLabel.TabIndex = 1;
-            id_AnketLabel.Text = "Id Anket:";
-            // 
-            // specialityLabel
-            // 
-            specialityLabel.AutoSize = true;
-            specialityLabel.Location = new System.Drawing.Point(9, 67);
-            specialityLabel.Name = "specialityLabel";
-            specialityLabel.Size = new System.Drawing.Size(55, 13);
-            specialityLabel.TabIndex = 3;
-            specialityLabel.Text = "Speciality:";
-            // 
-            // middleNameLabel
-            // 
-            middleNameLabel.AutoSize = true;
-            middleNameLabel.Location = new System.Drawing.Point(9, 93);
-            middleNameLabel.Name = "middleNameLabel";
-            middleNameLabel.Size = new System.Drawing.Size(72, 13);
-            middleNameLabel.TabIndex = 5;
-            middleNameLabel.Text = "Middle Name:";
-            // 
-            // surNameLabel
-            // 
-            surNameLabel.AutoSize = true;
-            surNameLabel.Location = new System.Drawing.Point(9, 119);
-            surNameLabel.Name = "surNameLabel";
-            surNameLabel.Size = new System.Drawing.Size(57, 13);
-            surNameLabel.TabIndex = 7;
-            surNameLabel.Text = "Sur Name:";
-            // 
-            // firstNameLabel
-            // 
-            firstNameLabel.AutoSize = true;
-            firstNameLabel.Location = new System.Drawing.Point(9, 145);
-            firstNameLabel.Name = "firstNameLabel";
-            firstNameLabel.Size = new System.Drawing.Size(60, 13);
-            firstNameLabel.TabIndex = 9;
-            firstNameLabel.Text = "First Name:";
-            // 
-            // iNNLabel
-            // 
-            iNNLabel.AutoSize = true;
-            iNNLabel.Location = new System.Drawing.Point(9, 171);
-            iNNLabel.Name = "iNNLabel";
-            iNNLabel.Size = new System.Drawing.Size(29, 13);
-            iNNLabel.TabIndex = 11;
-            iNNLabel.Text = "INN:";
-            // 
-            // past_place_of_workLabel
-            // 
-            past_place_of_workLabel.AutoSize = true;
-            past_place_of_workLabel.Location = new System.Drawing.Point(9, 197);
-            past_place_of_workLabel.Name = "past_place_of_workLabel";
-            past_place_of_workLabel.Size = new System.Drawing.Size(98, 13);
-            past_place_of_workLabel.TabIndex = 13;
-            past_place_of_workLabel.Text = "Past place of work:";
-            // 
-            // educationLabel
-            // 
-            educationLabel.AutoSize = true;
-            educationLabel.Location = new System.Drawing.Point(9, 223);
-            educationLabel.Name = "educationLabel";
-            educationLabel.Size = new System.Drawing.Size(58, 13);
-            educationLabel.TabIndex = 15;
-            educationLabel.Text = "Education:";
-            // 
-            // burn_placeLabel
-            // 
-            burn_placeLabel.AutoSize = true;
-            burn_placeLabel.Location = new System.Drawing.Point(9, 249);
-            burn_placeLabel.Name = "burn_placeLabel";
-            burn_placeLabel.Size = new System.Drawing.Size(61, 13);
-            burn_placeLabel.TabIndex = 17;
-            burn_placeLabel.Text = "Burn place:";
-            // 
-            // ageLabel
-            // 
-            ageLabel.AutoSize = true;
-            ageLabel.Location = new System.Drawing.Point(9, 275);
-            ageLabel.Name = "ageLabel";
-            ageLabel.Size = new System.Drawing.Size(29, 13);
-            ageLabel.TabIndex = 19;
-            ageLabel.Text = "Age:";
-            // 
-            // contact_phone_numberLabel
-            // 
-            contact_phone_numberLabel.AutoSize = true;
-            contact_phone_numberLabel.Location = new System.Drawing.Point(9, 301);
-            contact_phone_numberLabel.Name = "contact_phone_numberLabel";
-            contact_phone_numberLabel.Size = new System.Drawing.Size(118, 13);
-            contact_phone_numberLabel.TabIndex = 21;
-            contact_phone_numberLabel.Text = "Contact phone number:";
             // 
             // personnel_Department_of_the_InstituteDataSet
             // 
@@ -232,7 +118,7 @@
             // 
             this.tableAdapterManager.AnketaTableAdapter = this.anketaTableAdapter;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.ContractTableAdapter = null;
+            this.tableAdapterManager.ContractTableAdapter = this.contractTableAdapter;
             this.tableAdapterManager.Information_about_teachersTableAdapter = null;
             this.tableAdapterManager.Labour_book_dataTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
@@ -257,7 +143,7 @@
             this.bindingNavigatorDeleteItem,
             this.anketaBindingNavigatorSaveItem,
             this.TextBoxStripTool,
-            this.SearchToolStripButton});
+            this.toolStripButton1});
             this.anketaBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.anketaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.anketaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -268,31 +154,6 @@
             this.anketaBindingNavigator.Size = new System.Drawing.Size(800, 25);
             this.anketaBindingNavigator.TabIndex = 0;
             this.anketaBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
-            this.bindingNavigatorCountItem.Text = "для {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -327,9 +188,16 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Текущее положение";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
+            this.bindingNavigatorCountItem.Text = "для {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
+            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -352,8 +220,26 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
             // 
             // anketaBindingNavigatorSaveItem
             // 
@@ -362,116 +248,213 @@
             this.anketaBindingNavigatorSaveItem.Name = "anketaBindingNavigatorSaveItem";
             this.anketaBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.anketaBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.anketaBindingNavigatorSaveItem.Click += new System.EventHandler(this.anketaBindingNavigatorSaveItem_Click);
+            this.anketaBindingNavigatorSaveItem.Click += new System.EventHandler(this.anketaBindingNavigatorSaveItem_Click_1);
             // 
-            // TextBoxStripTool
+            // id_AnketaLabel
             // 
-            this.TextBoxStripTool.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.TextBoxStripTool.Name = "TextBoxStripTool";
-            this.TextBoxStripTool.Size = new System.Drawing.Size(100, 25);
+            id_AnketaLabel.AutoSize = true;
+            id_AnketaLabel.Location = new System.Drawing.Point(11, 35);
+            id_AnketaLabel.Name = "id_AnketaLabel";
+            id_AnketaLabel.Size = new System.Drawing.Size(56, 13);
+            id_AnketaLabel.TabIndex = 1;
+            id_AnketaLabel.Text = "Id Anketa:";
             // 
-            // SearchToolStripButton
+            // id_AnketaTextBox
             // 
-            this.SearchToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.SearchToolStripButton.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.research;
-            this.SearchToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.SearchToolStripButton.Name = "SearchToolStripButton";
-            this.SearchToolStripButton.Size = new System.Drawing.Size(23, 22);
-            this.SearchToolStripButton.Text = "SearchToolStripButton";
-            this.SearchToolStripButton.Click += new System.EventHandler(this.SearchToolStripButton_Click);
+            this.id_AnketaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Id_Anketa", true));
+            this.id_AnketaTextBox.Location = new System.Drawing.Point(135, 32);
+            this.id_AnketaTextBox.Name = "id_AnketaTextBox";
+            this.id_AnketaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.id_AnketaTextBox.TabIndex = 2;
             // 
-            // id_AnketTextBox
+            // specialityLabel
             // 
-            this.id_AnketTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Id_Anket", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.id_AnketTextBox.Location = new System.Drawing.Point(133, 38);
-            this.id_AnketTextBox.Name = "id_AnketTextBox";
-            this.id_AnketTextBox.Size = new System.Drawing.Size(100, 20);
-            this.id_AnketTextBox.TabIndex = 2;
+            specialityLabel.AutoSize = true;
+            specialityLabel.Location = new System.Drawing.Point(11, 61);
+            specialityLabel.Name = "specialityLabel";
+            specialityLabel.Size = new System.Drawing.Size(55, 13);
+            specialityLabel.TabIndex = 3;
+            specialityLabel.Text = "Speciality:";
             // 
             // specialityTextBox
             // 
             this.specialityTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Speciality", true));
-            this.specialityTextBox.Location = new System.Drawing.Point(133, 64);
+            this.specialityTextBox.Location = new System.Drawing.Point(135, 58);
             this.specialityTextBox.Name = "specialityTextBox";
             this.specialityTextBox.Size = new System.Drawing.Size(100, 20);
             this.specialityTextBox.TabIndex = 4;
             // 
+            // middleNameLabel
+            // 
+            middleNameLabel.AutoSize = true;
+            middleNameLabel.Location = new System.Drawing.Point(11, 87);
+            middleNameLabel.Name = "middleNameLabel";
+            middleNameLabel.Size = new System.Drawing.Size(72, 13);
+            middleNameLabel.TabIndex = 5;
+            middleNameLabel.Text = "Middle Name:";
+            // 
             // middleNameTextBox
             // 
             this.middleNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "MiddleName", true));
-            this.middleNameTextBox.Location = new System.Drawing.Point(133, 90);
+            this.middleNameTextBox.Location = new System.Drawing.Point(135, 84);
             this.middleNameTextBox.Name = "middleNameTextBox";
             this.middleNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.middleNameTextBox.TabIndex = 6;
             // 
+            // surNameLabel
+            // 
+            surNameLabel.AutoSize = true;
+            surNameLabel.Location = new System.Drawing.Point(11, 113);
+            surNameLabel.Name = "surNameLabel";
+            surNameLabel.Size = new System.Drawing.Size(57, 13);
+            surNameLabel.TabIndex = 7;
+            surNameLabel.Text = "Sur Name:";
+            // 
             // surNameTextBox
             // 
             this.surNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "SurName", true));
-            this.surNameTextBox.Location = new System.Drawing.Point(133, 116);
+            this.surNameTextBox.Location = new System.Drawing.Point(135, 110);
             this.surNameTextBox.Name = "surNameTextBox";
             this.surNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.surNameTextBox.TabIndex = 8;
             // 
+            // firstNameLabel
+            // 
+            firstNameLabel.AutoSize = true;
+            firstNameLabel.Location = new System.Drawing.Point(11, 139);
+            firstNameLabel.Name = "firstNameLabel";
+            firstNameLabel.Size = new System.Drawing.Size(60, 13);
+            firstNameLabel.TabIndex = 9;
+            firstNameLabel.Text = "First Name:";
+            // 
             // firstNameTextBox
             // 
             this.firstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "FirstName", true));
-            this.firstNameTextBox.Location = new System.Drawing.Point(133, 142);
+            this.firstNameTextBox.Location = new System.Drawing.Point(135, 136);
             this.firstNameTextBox.Name = "firstNameTextBox";
             this.firstNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.firstNameTextBox.TabIndex = 10;
             // 
+            // iNNLabel
+            // 
+            iNNLabel.AutoSize = true;
+            iNNLabel.Location = new System.Drawing.Point(11, 165);
+            iNNLabel.Name = "iNNLabel";
+            iNNLabel.Size = new System.Drawing.Size(29, 13);
+            iNNLabel.TabIndex = 11;
+            iNNLabel.Text = "INN:";
+            // 
             // iNNTextBox
             // 
-            this.iNNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "INN", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.iNNTextBox.Location = new System.Drawing.Point(133, 168);
+            this.iNNTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "INN", true));
+            this.iNNTextBox.Location = new System.Drawing.Point(135, 162);
             this.iNNTextBox.Name = "iNNTextBox";
             this.iNNTextBox.Size = new System.Drawing.Size(100, 20);
             this.iNNTextBox.TabIndex = 12;
             // 
+            // past_place_of_workLabel
+            // 
+            past_place_of_workLabel.AutoSize = true;
+            past_place_of_workLabel.Location = new System.Drawing.Point(11, 191);
+            past_place_of_workLabel.Name = "past_place_of_workLabel";
+            past_place_of_workLabel.Size = new System.Drawing.Size(98, 13);
+            past_place_of_workLabel.TabIndex = 13;
+            past_place_of_workLabel.Text = "Past place of work:";
+            // 
             // past_place_of_workTextBox
             // 
             this.past_place_of_workTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Past_place_of_work", true));
-            this.past_place_of_workTextBox.Location = new System.Drawing.Point(133, 194);
+            this.past_place_of_workTextBox.Location = new System.Drawing.Point(135, 188);
             this.past_place_of_workTextBox.Name = "past_place_of_workTextBox";
             this.past_place_of_workTextBox.Size = new System.Drawing.Size(100, 20);
             this.past_place_of_workTextBox.TabIndex = 14;
             // 
+            // educationLabel
+            // 
+            educationLabel.AutoSize = true;
+            educationLabel.Location = new System.Drawing.Point(11, 217);
+            educationLabel.Name = "educationLabel";
+            educationLabel.Size = new System.Drawing.Size(58, 13);
+            educationLabel.TabIndex = 15;
+            educationLabel.Text = "Education:";
+            // 
             // educationTextBox
             // 
             this.educationTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Education", true));
-            this.educationTextBox.Location = new System.Drawing.Point(133, 220);
+            this.educationTextBox.Location = new System.Drawing.Point(135, 214);
             this.educationTextBox.Name = "educationTextBox";
             this.educationTextBox.Size = new System.Drawing.Size(100, 20);
             this.educationTextBox.TabIndex = 16;
             // 
+            // burn_placeLabel
+            // 
+            burn_placeLabel.AutoSize = true;
+            burn_placeLabel.Location = new System.Drawing.Point(11, 243);
+            burn_placeLabel.Name = "burn_placeLabel";
+            burn_placeLabel.Size = new System.Drawing.Size(61, 13);
+            burn_placeLabel.TabIndex = 17;
+            burn_placeLabel.Text = "Burn place:";
+            // 
             // burn_placeTextBox
             // 
             this.burn_placeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Burn_place", true));
-            this.burn_placeTextBox.Location = new System.Drawing.Point(133, 246);
+            this.burn_placeTextBox.Location = new System.Drawing.Point(135, 240);
             this.burn_placeTextBox.Name = "burn_placeTextBox";
             this.burn_placeTextBox.Size = new System.Drawing.Size(100, 20);
             this.burn_placeTextBox.TabIndex = 18;
             // 
+            // ageLabel
+            // 
+            ageLabel.AutoSize = true;
+            ageLabel.Location = new System.Drawing.Point(11, 269);
+            ageLabel.Name = "ageLabel";
+            ageLabel.Size = new System.Drawing.Size(29, 13);
+            ageLabel.TabIndex = 19;
+            ageLabel.Text = "Age:";
+            // 
             // ageTextBox
             // 
-            this.ageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Age", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.ageTextBox.Location = new System.Drawing.Point(133, 272);
+            this.ageTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Age", true));
+            this.ageTextBox.Location = new System.Drawing.Point(135, 266);
             this.ageTextBox.Name = "ageTextBox";
             this.ageTextBox.Size = new System.Drawing.Size(100, 20);
             this.ageTextBox.TabIndex = 20;
             // 
+            // contact_phone_numberLabel
+            // 
+            contact_phone_numberLabel.AutoSize = true;
+            contact_phone_numberLabel.Location = new System.Drawing.Point(11, 295);
+            contact_phone_numberLabel.Name = "contact_phone_numberLabel";
+            contact_phone_numberLabel.Size = new System.Drawing.Size(118, 13);
+            contact_phone_numberLabel.TabIndex = 21;
+            contact_phone_numberLabel.Text = "Contact phone number:";
+            // 
             // contact_phone_numberTextBox
             // 
             this.contact_phone_numberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.anketaBindingSource, "Contact_phone_number", true));
-            this.contact_phone_numberTextBox.Location = new System.Drawing.Point(133, 298);
+            this.contact_phone_numberTextBox.Location = new System.Drawing.Point(135, 292);
             this.contact_phone_numberTextBox.Name = "contact_phone_numberTextBox";
             this.contact_phone_numberTextBox.Size = new System.Drawing.Size(100, 20);
             this.contact_phone_numberTextBox.TabIndex = 22;
             // 
+            // TextBoxStripTool
+            // 
+            this.TextBoxStripTool.Name = "TextBoxStripTool";
+            this.TextBoxStripTool.Size = new System.Drawing.Size(121, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
             // contractBindingSource
             // 
-            this.contractBindingSource.DataMember = "FK_Contract_Anketa";
-            this.contractBindingSource.DataSource = this.anketaBindingSource;
+            this.contractBindingSource.DataMember = "Contract";
+            this.contractBindingSource.DataSource = this.personnel_Department_of_the_InstituteDataSet;
             // 
             // contractTableAdapter
             // 
@@ -490,8 +473,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.contractDataGridView.DataSource = this.contractBindingSource;
-            this.contractDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.contractDataGridView.Location = new System.Drawing.Point(0, 399);
+            this.contractDataGridView.Location = new System.Drawing.Point(0, 334);
             this.contractDataGridView.Name = "contractDataGridView";
             this.contractDataGridView.Size = new System.Drawing.Size(800, 220);
             this.contractDataGridView.TabIndex = 23;
@@ -501,7 +483,6 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id_Contract";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id_Contract";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -539,140 +520,14 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Id_Anketa";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // bindingNavigator1
-            // 
-            this.bindingNavigator1.AddNewItem = this.toolStripButton1;
-            this.bindingNavigator1.BindingSource = this.contractBindingSource;
-            this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripSeparator1,
-            this.toolStripTextBox1,
-            this.toolStripLabel1,
-            this.toolStripSeparator2,
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.toolStripSeparator3,
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton7});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 374);
-            this.bindingNavigator1.MoveFirstItem = this.toolStripButton3;
-            this.bindingNavigator1.MoveLastItem = this.toolStripButton6;
-            this.bindingNavigator1.MoveNextItem = this.toolStripButton5;
-            this.bindingNavigator1.MovePreviousItem = this.toolStripButton4;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(800, 25);
-            this.bindingNavigator1.TabIndex = 24;
-            this.bindingNavigator1.Text = "bindingNavigator1";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Добавить";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(43, 22);
-            this.toolStripLabel1.Text = "для {0}";
-            this.toolStripLabel1.ToolTipText = "Общее число элементов";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Удалить";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "Переместить в начало";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "Переместить назад";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.AccessibleName = "Положение";
-            this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
-            this.toolStripTextBox1.Text = "0";
-            this.toolStripTextBox1.ToolTipText = "Текущее положение";
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "Переместить вперед";
-            // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton6.Text = "Переместить в конец";
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton7.Text = "Сохранить данные";
-            // 
             // FormAnket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 619);
-            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.contractDataGridView);
-            this.Controls.Add(id_AnketLabel);
-            this.Controls.Add(this.id_AnketTextBox);
+            this.Controls.Add(id_AnketaLabel);
+            this.Controls.Add(this.id_AnketaTextBox);
             this.Controls.Add(specialityLabel);
             this.Controls.Add(this.specialityTextBox);
             this.Controls.Add(middleNameLabel);
@@ -704,9 +559,6 @@
             this.anketaBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contractBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -731,7 +583,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton anketaBindingNavigatorSaveItem;
-        private System.Windows.Forms.TextBox id_AnketTextBox;
+        private Personnel_Department_of_the_InstituteDataSetTableAdapters.ContractTableAdapter contractTableAdapter;
+        private System.Windows.Forms.ToolStripComboBox TextBoxStripTool;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.TextBox id_AnketaTextBox;
         private System.Windows.Forms.TextBox specialityTextBox;
         private System.Windows.Forms.TextBox middleNameTextBox;
         private System.Windows.Forms.TextBox surNameTextBox;
@@ -743,7 +598,6 @@
         private System.Windows.Forms.TextBox ageTextBox;
         private System.Windows.Forms.TextBox contact_phone_numberTextBox;
         private System.Windows.Forms.BindingSource contractBindingSource;
-        private Personnel_Department_of_the_InstituteDataSetTableAdapters.ContractTableAdapter contractTableAdapter;
         private System.Windows.Forms.DataGridView contractDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -752,20 +606,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
-        private System.Windows.Forms.ToolStripTextBox TextBoxStripTool;
-        private System.Windows.Forms.ToolStripButton SearchToolStripButton;
     }
 }

@@ -28,6 +28,8 @@ namespace Personnel_Department_of_the_Institute
         private void Information_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet.Information_about_teachers". При необходимости она может быть перемещена или удалена.
+            this.information_about_teachersTableAdapter.Fill(this.personnel_Department_of_the_InstituteDataSet.Information_about_teachers);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet.Information_about_teachers". При необходимости она может быть перемещена или удалена.
             this.information_about_teachersTableAdapter.Fill(this.personnel_Department_of_the_InstituteDataSet
                 .Information_about_teachers);
 
@@ -81,6 +83,14 @@ namespace Personnel_Department_of_the_Institute
         private void toolStripButtonUnFilter_Click(object sender, EventArgs e)
         {
             information_about_teachersBindingSource.Filter = "";
+        }
+
+        private void information_about_teachersBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.information_about_teachersBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.personnel_Department_of_the_InstituteDataSet);
+
         }
     }
 }
