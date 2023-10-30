@@ -36,7 +36,7 @@ namespace Personnel_Department_of_the_Institute
         {
 
             SqlConnection connection = new
-                SqlConnection(Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
+                SqlConnection(Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString1);
             SqlCommand command = connection.CreateCommand();
             command.CommandText = sqlSelect;
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -59,7 +59,7 @@ namespace Personnel_Department_of_the_Institute
 
         private void radioButtonTeacher_CheckedChanged(object sender, EventArgs e)
         {
-            dataGridViewExample.DataSource = FillDataGridView(@"SELECT * FROM [Information about teachers]");
+            dataGridViewExample.DataSource = FillDataGridView(@"SELECT * FROM [Information_about_teachers]");
         }
 
         private void radioButtonLabour_CheckedChanged(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace Personnel_Department_of_the_Institute
 
             string sqlSelect = "SELECT * FROM Contract";
             SqlConnection connection = new
-                SqlConnection(Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
+                SqlConnection(Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString1);
             SqlCommand command = connection.CreateCommand();
             command.CommandText = sqlSelect;
             command.Parameters.AddWithValue("@last_name", textBoxWorker.Text + "%");
@@ -142,7 +142,7 @@ namespace Personnel_Department_of_the_Institute
             }
 
             SqlConnection connection = new
-                SqlConnection(Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
+                SqlConnection(Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString1);
             SqlCommand command = connection.CreateCommand();
             command.CommandText = sqlSelect;
             try
@@ -184,7 +184,7 @@ namespace Personnel_Department_of_the_Institute
                             VALUES (@Pedagogic_stage,@List_of_disciplines,@Load_in_the_current_year_number_of_hours,@Date_of_conclusion_of_the_contract,@Contract_end_date,@Id_Anketa)
                             ";
 
-            var connection = new SqlConnection(Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
+            var connection = new SqlConnection(Settings.Default.Personnel_Department_of_the_InstituteConnectionString1);
             var command = connection.CreateCommand();
             command.CommandText = _request;
             command.Parameters.Add("@Pedagogic_stage", SqlDbType.Int).Value = textBoxName_dish.Text;
@@ -212,7 +212,7 @@ namespace Personnel_Department_of_the_Institute
                         Name_of_the_department_or_department = @Name_of_the_department_or_department
                         WHERE Id_Teach = 2
                         ";
-            var connection = new SqlConnection(Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
+            var connection = new SqlConnection(Settings.Default.Personnel_Department_of_the_InstituteConnectionString1);
             var command = connection.CreateCommand();
             command.CommandText = _request;
             command.Parameters.Add("@Position_Degree_title", SqlDbType.NVarChar).Value = textBoxDegree.Text;
@@ -227,7 +227,7 @@ namespace Personnel_Department_of_the_Institute
         void DeleteDish()
         {
             _request = @"DELETE FROM [Information about teachers] WHERE Id_Teach = @Id_Teach";
-            var connection = new SqlConnection(Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
+            var connection = new SqlConnection(Settings.Default.Personnel_Department_of_the_InstituteConnectionString1);
             var command = connection.CreateCommand();
             command.CommandText = _request;
             command.Parameters.Add("@Id_Teach", SqlDbType.Int).Value = textBoxId_dish.Text;
