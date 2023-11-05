@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageFirst = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,6 +55,10 @@
             this.radioButtonNoCorrelated = new System.Windows.Forms.RadioButton();
             this.radioButtonCorrelated = new System.Windows.Forms.RadioButton();
             this.tabPageDML = new System.Windows.Forms.TabPage();
+            this.textBoxdepartment = new System.Windows.Forms.TextBox();
+            this.textBoxDegree = new System.Windows.Forms.TextBox();
+            this.labeldepartment = new System.Windows.Forms.Label();
+            this.labelDegree = new System.Windows.Forms.Label();
             this.textBoxIdAnketa = new System.Windows.Forms.TextBox();
             this.labelId = new System.Windows.Forms.Label();
             this.dataGridViewDish = new System.Windows.Forms.DataGridView();
@@ -76,10 +81,8 @@
             this.radioButtonDelete_dish = new System.Windows.Forms.RadioButton();
             this.radioButtonUpdate_dish = new System.Windows.Forms.RadioButton();
             this.radioButtonInsert_dish = new System.Windows.Forms.RadioButton();
-            this.labelDegree = new System.Windows.Forms.Label();
-            this.labeldepartment = new System.Windows.Forms.Label();
-            this.textBoxDegree = new System.Windows.Forms.TextBox();
-            this.textBoxdepartment = new System.Windows.Forms.TextBox();
+            this.personnel_Department_of_the_InstituteDataSet = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSet();
+            this.personnelDepartmentoftheInstituteDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPageFirst.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -93,6 +96,8 @@
             this.tabPageDML.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDish)).BeginInit();
             this.groupBoxDML.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personnel_Department_of_the_InstituteDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personnelDepartmentoftheInstituteDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -390,6 +395,38 @@
             this.tabPageDML.Text = " Запросы изменения данных";
             this.tabPageDML.UseVisualStyleBackColor = true;
             // 
+            // textBoxdepartment
+            // 
+            this.textBoxdepartment.Location = new System.Drawing.Point(620, 182);
+            this.textBoxdepartment.Name = "textBoxdepartment";
+            this.textBoxdepartment.Size = new System.Drawing.Size(100, 20);
+            this.textBoxdepartment.TabIndex = 18;
+            // 
+            // textBoxDegree
+            // 
+            this.textBoxDegree.Location = new System.Drawing.Point(620, 135);
+            this.textBoxDegree.Name = "textBoxDegree";
+            this.textBoxDegree.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDegree.TabIndex = 17;
+            // 
+            // labeldepartment
+            // 
+            this.labeldepartment.AutoSize = true;
+            this.labeldepartment.Location = new System.Drawing.Point(495, 182);
+            this.labeldepartment.Name = "labeldepartment";
+            this.labeldepartment.Size = new System.Drawing.Size(52, 13);
+            this.labeldepartment.TabIndex = 16;
+            this.labeldepartment.Text = "Кафедра";
+            // 
+            // labelDegree
+            // 
+            this.labelDegree.AutoSize = true;
+            this.labelDegree.Location = new System.Drawing.Point(492, 135);
+            this.labelDegree.Name = "labelDegree";
+            this.labelDegree.Size = new System.Drawing.Size(85, 13);
+            this.labelDegree.TabIndex = 15;
+            this.labelDegree.Text = "Специальность";
+            // 
             // textBoxIdAnketa
             // 
             this.textBoxIdAnketa.Location = new System.Drawing.Point(162, 328);
@@ -590,37 +627,15 @@
             this.radioButtonInsert_dish.UseVisualStyleBackColor = true;
             this.radioButtonInsert_dish.CheckedChanged += new System.EventHandler(this.radioButtonInsert_dish_CheckedChanged);
             // 
-            // labelDegree
+            // personnel_Department_of_the_InstituteDataSet
             // 
-            this.labelDegree.AutoSize = true;
-            this.labelDegree.Location = new System.Drawing.Point(492, 135);
-            this.labelDegree.Name = "labelDegree";
-            this.labelDegree.Size = new System.Drawing.Size(85, 13);
-            this.labelDegree.TabIndex = 15;
-            this.labelDegree.Text = "Специальность";
+            this.personnel_Department_of_the_InstituteDataSet.DataSetName = "Personnel_Department_of_the_InstituteDataSet";
+            this.personnel_Department_of_the_InstituteDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // labeldepartment
+            // personnelDepartmentoftheInstituteDataSetBindingSource
             // 
-            this.labeldepartment.AutoSize = true;
-            this.labeldepartment.Location = new System.Drawing.Point(495, 182);
-            this.labeldepartment.Name = "labeldepartment";
-            this.labeldepartment.Size = new System.Drawing.Size(52, 13);
-            this.labeldepartment.TabIndex = 16;
-            this.labeldepartment.Text = "Кафедра";
-            // 
-            // textBoxDegree
-            // 
-            this.textBoxDegree.Location = new System.Drawing.Point(620, 135);
-            this.textBoxDegree.Name = "textBoxDegree";
-            this.textBoxDegree.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDegree.TabIndex = 17;
-            // 
-            // textBoxdepartment
-            // 
-            this.textBoxdepartment.Location = new System.Drawing.Point(620, 182);
-            this.textBoxdepartment.Name = "textBoxdepartment";
-            this.textBoxdepartment.Size = new System.Drawing.Size(100, 20);
-            this.textBoxdepartment.TabIndex = 18;
+            this.personnelDepartmentoftheInstituteDataSetBindingSource.DataSource = this.personnel_Department_of_the_InstituteDataSet;
+            this.personnelDepartmentoftheInstituteDataSetBindingSource.Position = 0;
             // 
             // FormSQL
             // 
@@ -648,6 +663,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDish)).EndInit();
             this.groupBoxDML.ResumeLayout(false);
             this.groupBoxDML.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.personnel_Department_of_the_InstituteDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personnelDepartmentoftheInstituteDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -706,5 +723,7 @@
         private System.Windows.Forms.TextBox textBoxDegree;
         private System.Windows.Forms.Label labeldepartment;
         private System.Windows.Forms.Label labelDegree;
+        private System.Windows.Forms.BindingSource personnelDepartmentoftheInstituteDataSetBindingSource;
+        private Personnel_Department_of_the_InstituteDataSet personnel_Department_of_the_InstituteDataSet;
     }
 }

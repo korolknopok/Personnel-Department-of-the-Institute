@@ -59,7 +59,7 @@ namespace Personnel_Department_of_the_Institute
 
         private void radioButtonTeacher_CheckedChanged(object sender, EventArgs e)
         {
-            dataGridViewExample.DataSource = FillDataGridView(@"SELECT * FROM [Information about teachers]");
+            dataGridViewExample.DataSource = FillDataGridView(@"SELECT * FROM [Information_about_teachers]");
         }
 
         private void radioButtonLabour_CheckedChanged(object sender, EventArgs e)

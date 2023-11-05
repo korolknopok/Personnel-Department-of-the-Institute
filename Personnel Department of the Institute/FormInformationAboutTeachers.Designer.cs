@@ -75,7 +75,7 @@
             // 
             // information_about_teachersBindingSource
             // 
-            this.information_about_teachersBindingSource.DataMember = "Information about teachers";
+            this.information_about_teachersBindingSource.DataMember = "Information_about_teachers";
             this.information_about_teachersBindingSource.DataSource = this.personnel_Department_of_the_InstituteDataSet;
             // 
             // information_about_teachersTableAdapter

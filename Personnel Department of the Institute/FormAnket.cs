@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Personnel_Department_of_the_Institute;
 
 namespace Personnel_Department_of_the_Institute
 {
@@ -37,10 +38,11 @@ namespace Personnel_Department_of_the_Institute
 
         private void FormAnket_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet.Contract". При необходимости она может быть перемещена или удалена.
-            this.contractTableAdapter.Fill(this.personnel_Department_of_the_InstituteDataSet.Contract);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet.Anketa". При необходимости она может быть перемещена или удалена.
-            this.anketaTableAdapter.Fill(this.personnel_Department_of_the_InstituteDataSet.Anketa);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet1.Contract". При необходимости она может быть перемещена или удалена.
+            this.contractTableAdapter1.Fill(this.personnel_Department_of_the_InstituteDataSet1.Contract);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "personnel_Department_of_the_InstituteDataSet1.Anketa". При необходимости она может быть перемещена или удалена.
+            this.anketaTableAdapter1.Fill(this.personnel_Department_of_the_InstituteDataSet1.Anketa);
+            
 
         }
         private static FormAnket f;
@@ -93,6 +95,5 @@ namespace Personnel_Department_of_the_Institute
                 }
             }
         }
-
     }
 }
