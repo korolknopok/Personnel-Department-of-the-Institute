@@ -83,7 +83,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.TextBoxStripTool = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripButtonTeacher = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonUnFilter = new System.Windows.Forms.ToolStripButton();
             id_AnketaLabel = new System.Windows.Forms.Label();
             specialityLabel = new System.Windows.Forms.Label();
             middleNameLabel = new System.Windows.Forms.Label();
@@ -346,6 +345,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id_Contract";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id_Contract";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -404,8 +404,7 @@
             this.information_about_teachersBindingNavigatorSaveItem,
             this.toolStripSeparator1,
             this.TextBoxStripTool,
-            this.toolStripButtonTeacher,
-            this.toolStripButtonUnFilter});
+            this.toolStripButtonTeacher});
             this.information_about_teachersBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.information_about_teachersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.information_about_teachersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -525,20 +524,12 @@
             // toolStripButtonTeacher
             // 
             this.toolStripButtonTeacher.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonTeacher.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.filter;
+            this.toolStripButtonTeacher.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.research;
             this.toolStripButtonTeacher.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonTeacher.Name = "toolStripButtonTeacher";
             this.toolStripButtonTeacher.Size = new System.Drawing.Size(23, 22);
             this.toolStripButtonTeacher.Text = "toolStripButton1";
-            // 
-            // toolStripButtonUnFilter
-            // 
-            this.toolStripButtonUnFilter.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonUnFilter.Image = global::Personnel_Department_of_the_Institute.Properties.Resources.filter__1_;
-            this.toolStripButtonUnFilter.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonUnFilter.Name = "toolStripButtonUnFilter";
-            this.toolStripButtonUnFilter.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButtonUnFilter.Text = "toolStripButton1";
+            this.toolStripButtonTeacher.Click += new System.EventHandler(this.SearchToolStripButton_Click);
             // 
             // FormAnket
             // 
@@ -633,6 +624,5 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox TextBoxStripTool;
         private System.Windows.Forms.ToolStripButton toolStripButtonTeacher;
-        private System.Windows.Forms.ToolStripButton toolStripButtonUnFilter;
     }
 }
