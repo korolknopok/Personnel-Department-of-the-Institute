@@ -84,18 +84,13 @@ namespace Personnel_Department_of_the_Institute
                 checkBoxMore.Checked = false;
                 return;
             }
+            string more = "";
 
-            string sqlSelect = "SELECT * FROM Contract";
-            SqlConnection connection = new
-                SqlConnection(Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
-            SqlCommand command = connection.CreateCommand();
-            command.CommandText = sqlSelect;
-            command.Parameters.AddWithValue("@last_name", textBoxWorker.Text + "%");
+            
             if (checkBoxMore.Checked)
                 try
                 {
-                    command.Parameters.Add("@amount", SqlDbType.Money).Value =
-                        Double.Parse(textBoxMore.Text);
+                    more = $"AND c.Load_in_the_current_year_number_of_hours > {textBoxMore.Text} ";
                 }
                 catch
                 {
@@ -105,6 +100,15 @@ namespace Personnel_Department_of_the_Institute
                     checkBoxMore.Checked = false;
                     return;
                 }
+            string sqlSelect = $"SELECT * FROM Anketa a INNER JOIN Contract c ON a.Id_Anketa = c.Id_Anketa WHERE a.SurName = '{textBoxWorker.Text}' {more}ORDER BY c.Load_in_the_current_year_number_of_hours DESC";
+            SqlConnection connection = new
+                SqlConnection(Properties.Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
+            SqlCommand command = connection.CreateCommand();
+            command.CommandText = sqlSelect;
+            command.Parameters.AddWithValue("@last_name", textBoxWorker.Text + "%");
+           
+
+
 
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = command;
@@ -129,8 +133,9 @@ namespace Personnel_Department_of_the_Institute
             string sqlSelect = "";
 
             if (radioButtonCorrelated.Checked)
-                sqlSelect = @"SELECT * FROM (SELECT SurName + ' ' + FirstName + ' ' + MiddleName AS fio FROM Anketa ) AS a ";
-
+            {
+                sqlSelect = $"SELECT a.SurName, (SELECT (c.Load_in_the_current_year_number_of_hours) FROM Contract c WHERE a.Id_Anketa = c.Id_Anketa) As Load_number_of_minutes FROM Anketa a";
+            }
 
             else if (radioButtonNoCorrelated.Checked)
                 sqlSelect = @"SELECT * FROM Contract WHERE List_of_disciplines = 'Программирование' AND Load_in_the_current_year_number_of_hours > (SELECT AVG(Load_in_the_current_year_number_of_hours) FROM Contract)";
@@ -274,6 +279,7 @@ namespace Personnel_Department_of_the_Institute
             buttonFind.Visible = true;
             ClearValueFromElements();
         }
+
     }
 }
 

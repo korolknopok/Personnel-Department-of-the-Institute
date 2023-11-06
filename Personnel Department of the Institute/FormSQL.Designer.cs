@@ -204,7 +204,7 @@
             this.tabPageSelect.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageSelect.Size = new System.Drawing.Size(792, 537);
             this.tabPageSelect.TabIndex = 1;
-            this.tabPageSelect.Text = "Полня запись SELECT";
+            this.tabPageSelect.Text = "Полная запись SELECT";
             this.tabPageSelect.UseVisualStyleBackColor = true;
             // 
             // dataGridViewFSelect

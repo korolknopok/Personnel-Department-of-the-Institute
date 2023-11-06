@@ -509,6 +509,7 @@
             this.information_about_teachersBindingNavigatorSaveItem.Name = "information_about_teachersBindingNavigatorSaveItem";
             this.information_about_teachersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.information_about_teachersBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.information_about_teachersBindingNavigatorSaveItem.Click += new System.EventHandler(this.information_about_teachersBindingNavigatorSaveItem_Click);
             // 
             // toolStripSeparator1
             // 

@@ -18,23 +18,6 @@ namespace Personnel_Department_of_the_Institute
             InitializeComponent();
         }
 
-        private void anketaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            int indexPosition;
-            try
-            {
-                this.Validate();
-                this.anketaBindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.personnel_Department_of_the_InstituteDataSet);
-            }
-
-            catch (Exception err)
-            {
-                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-        }
 
         private void FormAnket_Load(object sender, EventArgs e)
         {
@@ -93,6 +76,21 @@ namespace Personnel_Department_of_the_Institute
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     anketaBindingSource.Position = 0;
                 }
+            }
+        }
+
+        private void information_about_teachersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Validate();
+                this.anketaBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.personnel_Department_of_the_InstituteDataSet);
+            }
+
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
