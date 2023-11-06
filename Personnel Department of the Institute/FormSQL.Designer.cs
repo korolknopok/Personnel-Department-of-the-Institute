@@ -41,7 +41,6 @@
             this.dataGridViewFSelect = new System.Windows.Forms.DataGridView();
             this.groupBoxFSelect = new System.Windows.Forms.GroupBox();
             this.buttonF_select = new System.Windows.Forms.Button();
-            this.checkBoxOrder = new System.Windows.Forms.CheckBox();
             this.textBoxMore = new System.Windows.Forms.TextBox();
             this.checkBoxMore = new System.Windows.Forms.CheckBox();
             this.textBoxWorker = new System.Windows.Forms.TextBox();
@@ -210,15 +209,15 @@
             // dataGridViewFSelect
             // 
             this.dataGridViewFSelect.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFSelect.Location = new System.Drawing.Point(4, 200);
+            this.dataGridViewFSelect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridViewFSelect.Location = new System.Drawing.Point(3, 200);
             this.dataGridViewFSelect.Name = "dataGridViewFSelect";
-            this.dataGridViewFSelect.Size = new System.Drawing.Size(786, 226);
+            this.dataGridViewFSelect.Size = new System.Drawing.Size(786, 334);
             this.dataGridViewFSelect.TabIndex = 1;
             // 
             // groupBoxFSelect
             // 
             this.groupBoxFSelect.Controls.Add(this.buttonF_select);
-            this.groupBoxFSelect.Controls.Add(this.checkBoxOrder);
             this.groupBoxFSelect.Controls.Add(this.textBoxMore);
             this.groupBoxFSelect.Controls.Add(this.checkBoxMore);
             this.groupBoxFSelect.Controls.Add(this.textBoxWorker);
@@ -240,16 +239,6 @@
             this.buttonF_select.Text = "Нагрузка сотрудников";
             this.buttonF_select.UseVisualStyleBackColor = true;
             this.buttonF_select.Click += new System.EventHandler(this.buttonF_select_Click);
-            // 
-            // checkBoxOrder
-            // 
-            this.checkBoxOrder.AutoSize = true;
-            this.checkBoxOrder.Location = new System.Drawing.Point(9, 116);
-            this.checkBoxOrder.Name = "checkBoxOrder";
-            this.checkBoxOrder.Size = new System.Drawing.Size(254, 17);
-            this.checkBoxOrder.TabIndex = 5;
-            this.checkBoxOrder.Text = "Включить сортировку по убыванию нагрузки";
-            this.checkBoxOrder.UseVisualStyleBackColor = true;
             // 
             // textBoxMore
             // 
@@ -682,7 +671,6 @@
         private System.Windows.Forms.RadioButton radioButtonAnketa;
         private System.Windows.Forms.GroupBox groupBoxFSelect;
         private System.Windows.Forms.Button buttonF_select;
-        private System.Windows.Forms.CheckBox checkBoxOrder;
         private System.Windows.Forms.TextBox textBoxMore;
         private System.Windows.Forms.CheckBox checkBoxMore;
         private System.Windows.Forms.TextBox textBoxWorker;

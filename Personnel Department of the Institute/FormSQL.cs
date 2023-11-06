@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -79,7 +80,7 @@ namespace Personnel_Department_of_the_Institute
 
             if (checkBoxMore.Checked && String.IsNullOrEmpty(textBoxMore.Text))
             {
-                MessageBox.Show("Не указана прибыль в условии", "Внимание",
+                MessageBox.Show("Не указана значение в условии", "Внимание",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 checkBoxMore.Checked = false;
                 return;
@@ -94,7 +95,7 @@ namespace Personnel_Department_of_the_Institute
                 }
                 catch
                 {
-                    MessageBox.Show("Прибыль в условии должна быть задана числом", "ошибка", MessageBoxButtons.OK,
+                    MessageBox.Show("Значение в условии должна быть задана числом", "ошибка", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
 
                     checkBoxMore.Checked = false;
@@ -125,7 +126,7 @@ namespace Personnel_Department_of_the_Institute
         {
             if (String.IsNullOrEmpty(textBoxNumber.Text))
             {
-                MessageBox.Show("Обязательно укажите номер необходимой продажи",
+                MessageBox.Show("Обязательно укажите номер необходимого значения",
                     "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -134,11 +135,11 @@ namespace Personnel_Department_of_the_Institute
 
             if (radioButtonCorrelated.Checked)
             {
-                sqlSelect = $"SELECT a.SurName, (SELECT (c.Load_in_the_current_year_number_of_hours) FROM Contract c WHERE a.Id_Anketa = c.Id_Anketa) As Load_number_of_minutes FROM Anketa a";
+                sqlSelect = $"SELECT a.SurName FROM Anketa a WHERE EXISTS (  SELECT *  FROM Contract c  WHERE c.Pedagogic_stage = '{textBoxNumber.Text}'  AND c.Id_Anketa = a.Id_Anketa)";
             }
 
             else if (radioButtonNoCorrelated.Checked)
-                sqlSelect = @"SELECT * FROM Contract WHERE List_of_disciplines = 'Программирование' AND Load_in_the_current_year_number_of_hours > (SELECT AVG(Load_in_the_current_year_number_of_hours) FROM Contract)";
+                sqlSelect = $"SELECT * FROM Contract WHERE Id_Anketa IN (SELECT Id_Anketa FROM Anketa)  AND Pedagogic_stage = '{textBoxNumber.Text}'";
             else
             {
                 MessageBox.Show("Не выбрали вид подзапроса", "Ошибка",
@@ -157,7 +158,7 @@ namespace Personnel_Department_of_the_Institute
             }
             catch
             {
-                MessageBox.Show("Номер продажи в условии должен быть задан числом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Номер значения в условии должен быть задан числом", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
