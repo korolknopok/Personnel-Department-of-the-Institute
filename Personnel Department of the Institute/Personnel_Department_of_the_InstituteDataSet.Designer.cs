@@ -585,10 +585,10 @@ namespace Personnel_Department_of_the_Institute {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AnketaRow AddAnketaRow(int Id_Anketa, string Speciality, string MiddleName, string SurName, string FirstName, int INN, string Past_place_of_work, string Education, string Burn_place, int Age, string Contact_phone_number) {
+            public AnketaRow AddAnketaRow(string Speciality, string MiddleName, string SurName, string FirstName, int INN, string Past_place_of_work, string Education, string Burn_place, int Age, string Contact_phone_number) {
                 AnketaRow rowAnketaRow = ((AnketaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Id_Anketa,
+                        null,
                         Speciality,
                         MiddleName,
                         SurName,
@@ -668,7 +668,11 @@ namespace Personnel_Department_of_the_Institute {
                 base.Columns.Add(this.columnContact_phone_number);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_Anketa}, true));
+                this.columnId_Anketa.AutoIncrement = true;
+                this.columnId_Anketa.AutoIncrementSeed = -1;
+                this.columnId_Anketa.AutoIncrementStep = -1;
                 this.columnId_Anketa.AllowDBNull = false;
+                this.columnId_Anketa.ReadOnly = true;
                 this.columnId_Anketa.Unique = true;
                 this.columnSpeciality.AllowDBNull = false;
                 this.columnSpeciality.MaxLength = 50;
@@ -2852,10 +2856,9 @@ namespace Personnel_Department_of_the_Institute.Personnel_Department_of_the_Inst
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contact_phone_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact_phone_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Anketa] ([Id_Anketa], [Speciality], [MiddleName], [SurName], [FirstName], [INN], [Past_place_of_work], [Education], [Burn_place], [Age], [Contact_phone_number]) VALUES (@Id_Anketa, @Speciality, @MiddleName, @SurName, @FirstName, @INN, @Past_place_of_work, @Education, @Burn_place, @Age, @Contact_phone_number);
-SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number FROM Anketa WHERE (Id_Anketa = @Id_Anketa)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Anketa] ([Speciality], [MiddleName], [SurName], [FirstName], [INN], [Past_place_of_work], [Education], [Burn_place], [Age], [Contact_phone_number]) VALUES (@Speciality, @MiddleName, @SurName, @FirstName, @INN, @Past_place_of_work, @Education, @Burn_place, @Age, @Contact_phone_number);
+SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number FROM Anketa WHERE (Id_Anketa = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speciality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speciality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MiddleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2868,10 +2871,9 @@ SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact_phone_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact_phone_number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Anketa] SET [Id_Anketa] = @Id_Anketa, [Speciality] = @Speciality, [MiddleName] = @MiddleName, [SurName] = @SurName, [FirstName] = @FirstName, [INN] = @INN, [Past_place_of_work] = @Past_place_of_work, [Education] = @Education, [Burn_place] = @Burn_place, [Age] = @Age, [Contact_phone_number] = @Contact_phone_number WHERE (([Id_Anketa] = @Original_Id_Anketa) AND ([Speciality] = @Original_Speciality) AND ((@IsNull_MiddleName = 1 AND [MiddleName] IS NULL) OR ([MiddleName] = @Original_MiddleName)) AND ([SurName] = @Original_SurName) AND ([FirstName] = @Original_FirstName) AND ([INN] = @Original_INN) AND ((@IsNull_Past_place_of_work = 1 AND [Past_place_of_work] IS NULL) OR ([Past_place_of_work] = @Original_Past_place_of_work)) AND ([Education] = @Original_Education) AND ([Burn_place] = @Original_Burn_place) AND ([Age] = @Original_Age) AND ([Contact_phone_number] = @Original_Contact_phone_number));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Anketa] SET [Speciality] = @Speciality, [MiddleName] = @MiddleName, [SurName] = @SurName, [FirstName] = @FirstName, [INN] = @INN, [Past_place_of_work] = @Past_place_of_work, [Education] = @Education, [Burn_place] = @Burn_place, [Age] = @Age, [Contact_phone_number] = @Contact_phone_number WHERE (([Id_Anketa] = @Original_Id_Anketa) AND ([Speciality] = @Original_Speciality) AND ((@IsNull_MiddleName = 1 AND [MiddleName] IS NULL) OR ([MiddleName] = @Original_MiddleName)) AND ([SurName] = @Original_SurName) AND ([FirstName] = @Original_FirstName) AND ([INN] = @Original_INN) AND ((@IsNull_Past_place_of_work = 1 AND [Past_place_of_work] IS NULL) OR ([Past_place_of_work] = @Original_Past_place_of_work)) AND ([Education] = @Original_Education) AND ([Burn_place] = @Original_Burn_place) AND ([Age] = @Original_Age) AND ([Contact_phone_number] = @Original_Contact_phone_number));
 SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number FROM Anketa WHERE (Id_Anketa = @Id_Anketa)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anketa", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Speciality", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Speciality", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MiddleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SurName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "SurName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2895,6 +2897,7 @@ SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Burn_place", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Burn_place", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Age", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Age", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contact_phone_number", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contact_phone_number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id_Anketa", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id_Anketa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3048,57 +3051,56 @@ SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Id_Anketa, string Speciality, string MiddleName, string SurName, string FirstName, int INN, string Past_place_of_work, string Education, string Burn_place, int Age, string Contact_phone_number) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Id_Anketa));
+        public virtual int Insert(string Speciality, string MiddleName, string SurName, string FirstName, int INN, string Past_place_of_work, string Education, string Burn_place, int Age, string Contact_phone_number) {
             if ((Speciality == null)) {
                 throw new global::System.ArgumentNullException("Speciality");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Speciality));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Speciality));
             }
             if ((MiddleName == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(MiddleName));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MiddleName));
             }
             if ((SurName == null)) {
                 throw new global::System.ArgumentNullException("SurName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(SurName));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(SurName));
             }
             if ((FirstName == null)) {
                 throw new global::System.ArgumentNullException("FirstName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FirstName));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(FirstName));
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(INN));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(INN));
             if ((Past_place_of_work == null)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Past_place_of_work));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Past_place_of_work));
             }
             if ((Education == null)) {
                 throw new global::System.ArgumentNullException("Education");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Education));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Education));
             }
             if ((Burn_place == null)) {
                 throw new global::System.ArgumentNullException("Burn_place");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Burn_place));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Burn_place));
             }
-            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(Age));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(Age));
             if ((Contact_phone_number == null)) {
                 throw new global::System.ArgumentNullException("Contact_phone_number");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(Contact_phone_number));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Contact_phone_number));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3121,7 +3123,6 @@ SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int Id_Anketa, 
                     string Speciality, 
                     string MiddleName, 
                     string SurName, 
@@ -3142,113 +3143,114 @@ SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of
                     string Original_Education, 
                     string Original_Burn_place, 
                     int Original_Age, 
-                    string Original_Contact_phone_number) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Id_Anketa));
+                    string Original_Contact_phone_number, 
+                    int Id_Anketa) {
             if ((Speciality == null)) {
                 throw new global::System.ArgumentNullException("Speciality");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Speciality));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Speciality));
             }
             if ((MiddleName == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(MiddleName));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(MiddleName));
             }
             if ((SurName == null)) {
                 throw new global::System.ArgumentNullException("SurName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(SurName));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(SurName));
             }
             if ((FirstName == null)) {
                 throw new global::System.ArgumentNullException("FirstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FirstName));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(FirstName));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(INN));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(INN));
             if ((Past_place_of_work == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Past_place_of_work));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Past_place_of_work));
             }
             if ((Education == null)) {
                 throw new global::System.ArgumentNullException("Education");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Education));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Education));
             }
             if ((Burn_place == null)) {
                 throw new global::System.ArgumentNullException("Burn_place");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Burn_place));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Burn_place));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Age));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Age));
             if ((Contact_phone_number == null)) {
                 throw new global::System.ArgumentNullException("Contact_phone_number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Contact_phone_number));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Contact_phone_number));
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Id_Anketa));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Id_Anketa));
             if ((Original_Speciality == null)) {
                 throw new global::System.ArgumentNullException("Original_Speciality");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Speciality));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Speciality));
             }
             if ((Original_MiddleName == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_MiddleName));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_MiddleName));
             }
             if ((Original_SurName == null)) {
                 throw new global::System.ArgumentNullException("Original_SurName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_SurName));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_SurName));
             }
             if ((Original_FirstName == null)) {
                 throw new global::System.ArgumentNullException("Original_FirstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_FirstName));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_FirstName));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_INN));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_INN));
             if ((Original_Past_place_of_work == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Past_place_of_work));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_Past_place_of_work));
             }
             if ((Original_Education == null)) {
                 throw new global::System.ArgumentNullException("Original_Education");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Education));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Education));
             }
             if ((Original_Burn_place == null)) {
                 throw new global::System.ArgumentNullException("Original_Burn_place");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Burn_place));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Burn_place));
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_Age));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_Age));
             if ((Original_Contact_phone_number == null)) {
                 throw new global::System.ArgumentNullException("Original_Contact_phone_number");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_Contact_phone_number));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_Contact_phone_number));
             }
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((int)(Id_Anketa));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3291,7 +3293,7 @@ SELECT Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of
                     string Original_Burn_place, 
                     int Original_Age, 
                     string Original_Contact_phone_number) {
-            return this.Update(Original_Id_Anketa, Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number, Original_Id_Anketa, Original_Speciality, Original_MiddleName, Original_SurName, Original_FirstName, Original_INN, Original_Past_place_of_work, Original_Education, Original_Burn_place, Original_Age, Original_Contact_phone_number);
+            return this.Update(Speciality, MiddleName, SurName, FirstName, INN, Past_place_of_work, Education, Burn_place, Age, Contact_phone_number, Original_Id_Anketa, Original_Speciality, Original_MiddleName, Original_SurName, Original_FirstName, Original_INN, Original_Past_place_of_work, Original_Education, Original_Burn_place, Original_Age, Original_Contact_phone_number, Original_Id_Anketa);
         }
     }
     

@@ -185,7 +185,7 @@ namespace Personnel_Department_of_the_Institute
 
         void InsertDish()
         {
-            _request = @"USE [Personnel Department of the Institute]
+            _request = @"USE [Personnel_Department_of_the_Institute]
                             INSERT INTO Contract(Pedagogic_stage, List_of_disciplines, Load_in_the_current_year_number_of_hours, Date_of_conclusion_of_the_contract, Contract_end_date, Id_Anketa)
                             VALUES (@Pedagogic_stage,@List_of_disciplines,@Load_in_the_current_year_number_of_hours,@Date_of_conclusion_of_the_contract,@Contract_end_date,@Id_Anketa)
                             ";
@@ -213,26 +213,29 @@ namespace Personnel_Department_of_the_Institute
         }
         void UpdateDish()
         {
-            _request = @"UPDATE [Information about teachers]
+            
+            _request = $@"UPDATE Information_about_teachers
                         SET Position_Degree_title = @Position_Degree_title,
                         Name_of_the_department_or_department = @Name_of_the_department_or_department
-                        WHERE Id_Teach = 2
+                        WHERE Id_Teach = @Id_Teach
                         ";
             var connection = new SqlConnection(Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
             var command = connection.CreateCommand();
             command.CommandText = _request;
             command.Parameters.Add("@Position_Degree_title", SqlDbType.NVarChar).Value = textBoxDegree.Text;
             command.Parameters.Add("@Name_of_the_department_or_department", SqlDbType.NVarChar).Value = textBoxdepartment.Text;
+            command.Parameters.Add("@Id_Teach", SqlDbType.Int).Value = textBoxId_dish.Text;
+
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
-            _request = "SELECT * FROM [Information about teachers]";
+            _request = "SELECT * FROM Information_about_teachers";
             dataGridViewDish.DataSource = FillDataGridView(_request);
         }
 
         void DeleteDish()
         {
-            _request = @"DELETE FROM [Information about teachers] WHERE Id_Teach = @Id_Teach";
+            _request = @"DELETE FROM Information_about_teachers WHERE Id_Teach = @Id_Teach";
             var connection = new SqlConnection(Settings.Default.Personnel_Department_of_the_InstituteConnectionString);
             var command = connection.CreateCommand();
             command.CommandText = _request;
@@ -240,7 +243,7 @@ namespace Personnel_Department_of_the_Institute
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
-            _request = "SELECT * FROM [Information about teachers]";
+            _request = "SELECT * FROM Information_about_teachers";
             dataGridViewDish.DataSource = FillDataGridView(_request);
         }
 

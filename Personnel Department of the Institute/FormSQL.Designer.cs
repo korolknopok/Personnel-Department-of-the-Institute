@@ -72,7 +72,6 @@
             this.labelType_dish = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxDML = new System.Windows.Forms.GroupBox();
-            this.buttonFind = new System.Windows.Forms.Button();
             this.buttonExecuteDML = new System.Windows.Forms.Button();
             this.panelDish = new System.Windows.Forms.Panel();
             this.textBoxId_dish = new System.Windows.Forms.TextBox();
@@ -82,6 +81,7 @@
             this.radioButtonInsert_dish = new System.Windows.Forms.RadioButton();
             this.personnel_Department_of_the_InstituteDataSet = new Personnel_Department_of_the_Institute.Personnel_Department_of_the_InstituteDataSet();
             this.personnelDepartmentoftheInstituteDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonFind = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageFirst.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -538,15 +538,6 @@
             this.groupBoxDML.TabStop = false;
             this.groupBoxDML.Text = "Операторы";
             // 
-            // buttonFind
-            // 
-            this.buttonFind.Location = new System.Drawing.Point(324, 56);
-            this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(92, 23);
-            this.buttonFind.TabIndex = 6;
-            this.buttonFind.Text = "Найти";
-            this.buttonFind.UseVisualStyleBackColor = true;
-            // 
             // buttonExecuteDML
             // 
             this.buttonExecuteDML.Location = new System.Drawing.Point(478, 53);
@@ -625,6 +616,15 @@
             // 
             this.personnelDepartmentoftheInstituteDataSetBindingSource.DataSource = this.personnel_Department_of_the_InstituteDataSet;
             this.personnelDepartmentoftheInstituteDataSetBindingSource.Position = 0;
+            // 
+            // buttonFind
+            // 
+            this.buttonFind.Location = new System.Drawing.Point(324, 56);
+            this.buttonFind.Name = "buttonFind";
+            this.buttonFind.Size = new System.Drawing.Size(92, 23);
+            this.buttonFind.TabIndex = 6;
+            this.buttonFind.Text = "Найти";
+            this.buttonFind.UseVisualStyleBackColor = true;
             // 
             // FormSQL
             // 
@@ -706,12 +706,12 @@
         private System.Windows.Forms.Label labelPrice_dish;
         private System.Windows.Forms.TextBox textBoxIdAnketa;
         private System.Windows.Forms.Label labelId;
-        private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.TextBox textBoxdepartment;
         private System.Windows.Forms.TextBox textBoxDegree;
         private System.Windows.Forms.Label labeldepartment;
         private System.Windows.Forms.Label labelDegree;
         private System.Windows.Forms.BindingSource personnelDepartmentoftheInstituteDataSetBindingSource;
         private Personnel_Department_of_the_InstituteDataSet personnel_Department_of_the_InstituteDataSet;
+        private System.Windows.Forms.Button buttonFind;
     }
 }
