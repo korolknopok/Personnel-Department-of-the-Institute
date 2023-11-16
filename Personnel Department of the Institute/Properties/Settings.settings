@@ -2,15 +2,15 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Personnel_Department_of_the_Institute.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="Personnel_Department_of_the_InstituteConnectionString" Type="(Connection string)" Scope="Application">
+    <Setting Name="Personnel_Department_of_the_Institute" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
-  &lt;ConnectionString&gt;Data Source=LAPTOP-7JTFI612\SQLEXPRESS;Initial Catalog="Personnel Department of the Institute";Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ConnectionString&gt;Data Source=LAPTOP-5FC12NDF\SQLEXPRESS;Initial Catalog=Personnel_Department_of_the_Institute;Integrated Security=True&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Data Source=LAPTOP-7JTFI612\SQLEXPRESS;Initial Catalog="Personnel Department of the Institute";Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=LAPTOP-5FC12NDF\SQLEXPRESS;Initial Catalog=Personnel_Department_of_the_Institute;Integrated Security=True</Value>
     </Setting>
-    <Setting Name="Personnel_Department_of_the_Institute" Type="(Connection string)" Scope="Application">
+    <Setting Name="Personnel_Department_of_the_InstituteConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;ConnectionString&gt;Data Source=LAPTOP-5FC12NDF\SQLEXPRESS;Initial Catalog=Personnel_Department_of_the_Institute;Integrated Security=True&lt;/ConnectionString&gt;

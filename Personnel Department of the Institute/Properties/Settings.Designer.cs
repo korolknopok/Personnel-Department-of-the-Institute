@@ -26,11 +26,11 @@ namespace Personnel_Department_of_the_Institute.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-7JTFI612\\SQLEXPRESS;Initial Catalog=\"Personnel Department of t" +
-            "he Institute\";Integrated Security=True")]
-        public string Personnel_Department_of_the_InstituteConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-5FC12NDF\\SQLEXPRESS;Initial Catalog=Personnel_Department_of_th" +
+            "e_Institute;Integrated Security=True")]
+        public string Personnel_Department_of_the_Institute {
             get {
-                return ((string)(this["Personnel_Department_of_the_InstituteConnectionString"]));
+                return ((string)(this["Personnel_Department_of_the_Institute"]));
             }
         }
         
@@ -39,9 +39,9 @@ namespace Personnel_Department_of_the_Institute.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-5FC12NDF\\SQLEXPRESS;Initial Catalog=Personnel_Department_of_th" +
             "e_Institute;Integrated Security=True")]
-        public string Personnel_Department_of_the_Institute {
+        public string Personnel_Department_of_the_InstituteConnectionString {
             get {
-                return ((string)(this["Personnel_Department_of_the_Institute"]));
+                return ((string)(this["Personnel_Department_of_the_InstituteConnectionString"]));
             }
         }
     }
