@@ -94,9 +94,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(270, 153);
             this.MinimumSize = new System.Drawing.Size(270, 153);
-            this.Name = "AuthForm";
+            this.Name = "AuthorizationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AuthForm";
+            this.Text = "AuthorizationForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
