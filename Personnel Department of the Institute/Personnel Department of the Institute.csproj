@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorizationForm.Designer.cs">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAnket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,7 @@
     <Compile Include="FormSQL.Designer.cs">
       <DependentUpon>FormSQL.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\ConnectionString.cs" />
     <Compile Include="Personnel_Department_of_the_InstituteDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -104,6 +111,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AuthorizationForm.resx">
+      <DependentUpon>AuthorizationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAnket.resx">
       <DependentUpon>FormAnket.cs</DependentUpon>
     </EmbeddedResource>

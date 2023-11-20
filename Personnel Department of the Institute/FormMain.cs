@@ -17,6 +17,13 @@ namespace Personnel_Department_of_the_Institute
         public FormMain()
         {
             InitializeComponent();
+            Hide();
+            var authorizationForm = new AuthorizationForm();
+            var result = authorizationForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                Show();
+            }
         }
 
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
